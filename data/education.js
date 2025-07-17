@@ -16,7 +16,7 @@ export const educationResumeItems = [
   },
   {
     duration: "2006 - 2008",
-    title: "Cambridge International Education",
+    title: "CAMBRIDGE INTERNATIONAL EDUCATION",
     institute: "A LEVELS- BUSINESS STUDIES, ECONOMICS AND ACCOUNTING",
     isLast: true, // to apply the mb--0 class
   },
