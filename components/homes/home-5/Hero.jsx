@@ -71,7 +71,7 @@ export default function Hero() {
                   <div className="contact-info tmp-scroll-trigger tmp-fade-in animation-order-2">
                     <h4 className="title">Contact :</h4>
                     <p className="para">Fort York Blvd, Toronto</p>
-                    <p className="para">shopnil.journey@gmail.com</p>
+                    <p className="para">contact@shopnilmahamud.com</p>
                   </div>
                 </div>
               </div>

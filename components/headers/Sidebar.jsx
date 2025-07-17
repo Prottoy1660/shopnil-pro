@@ -294,7 +294,7 @@ export default function Sidebar() {
                     fontSize: '13px',
                     marginBottom: '4px'
                   }}>Mail Us</span>
-                  <a href="mailto:shopnil.journey@gmail.com" style={{
+                  <a href="mailto:contact@shopnilmahamud.com" style={{
                     color: 'var(--color-heading)',
                     textDecoration: 'none',
                     fontSize: '16px',
@@ -306,7 +306,7 @@ export default function Sidebar() {
                     display: 'block',
                     maxWidth: '100%'
                   }}>
-                    shopnil.journey@gmail.com
+                    contact@shopnilmahamud.com
                   </a>
                 </div>
               </div>
