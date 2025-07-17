@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@use "sass:meta";
+@use "sass:math";
+@use "sass:color";
+
+// Vendor CSS
+@import "../css/vendor/fontawesome.css";
+@import "../css/plugins/swiper.css";
+@import "../css/plugins/odometer.css";
+@import "../css/vendor/animate.min.css";
+@import "../css/vendor/bootstrap.min.css";
+
+// Theme components
+@import "elements/_theme-toggle.scss";
+
+// Custom styles
+@import "style";
+@import "custom";
+
+// Background images
+.bg-image-1 {
+  background-image: url('/assets/images/bg/bg-image-1.jpg');
+}
+
+.bg-image-2 {
+  background-image: url('/assets/images/bg/bg-image-2.jpg');
+}
+
+.bg-image-3 {
+  background-image: url('/assets/images/bg/bg-image-3.jpg');
+}
+
+.bg-image-4 {
+  background-image: url('/assets/images/bg/bg-image-4.jpg');
+}

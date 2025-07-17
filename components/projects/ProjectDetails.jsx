@@ -1,0 +1,277 @@
+import React from "react";
+import Image from "next/image";
+import ProjectsShowcase from "./ProjectsShowcase";
+import FigmaViewer from "./FigmaViewer";
+import ProjectGallery from "./ProjectGallery";
+
+export default function ProjectDetails({ portfolioItem }) {
+  // Use the figmaUrl directly from the portfolio item
+  const figmaUrl = portfolioItem.figmaUrl;
+
+  // Use the project-specific gallery images from the portfolio item data
+  const galleryImages = portfolioItem.galleryImages || [
+    {
+      src: portfolioItem.imageSrc,
+      alt: `${portfolioItem.title} - Main Image`
+    }
+  ];
+
+  // Render a section with optional image
+  const renderSection = (section) => {
+    const { title, content, image, imagePosition, images, titleFontSize, titleFontWeight, contentFontSize, contentLineHeight } = section;
+    
+    // Function to format text with bold and highlight
+    const formatText = (text) => {
+      if (typeof text !== 'string') return text;
+      
+      // Replace **text** with bold
+      let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Replace ==text== with highlight
+      formattedText = formattedText.replace(/==(.*?)==/g, '<mark>$1</mark>');
+      
+      return formattedText;
+    };
+
+    const renderImages = (imgs) => (
+      <div className="section-images">
+        {imgs.map((img, idx) => (
+          <div className="section-image" key={idx}>
+            <img src={img} alt={`${title} illustration ${idx + 1}`} className="img-fluid" />
+          </div>
+        ))}
+      </div>
+    );
+
+    // Determine title class based on content
+    const titleClass = title && (
+      title.includes("Previous process:") ||
+      title.includes("New process:") ||
+      title.includes("Challenge 1: Fitting 7 Pages into 1 Screen") ||
+      title.includes("Challenge 2: Fitting PDF Viewer on top of that") ||
+      title.includes("Challenge 3: Designing the dark mode because some of them works at night shift")
+    ) ? "mini-title small" : "mini-title";
+
+    // Build title classes with font properties
+    const titleClasses = [
+      titleClass,
+      titleFontSize || '',
+      titleFontWeight || ''
+    ].filter(Boolean).join(' ');
+
+    // Build content classes with font properties
+    const contentClasses = [
+      'docs',
+      contentFontSize || '',
+      contentLineHeight || ''
+    ].filter(Boolean).join(' ');
+
+    // Add inline styles for smaller title
+    const titleStyle = title && (title.includes("Previous process:") || title.includes("New process:")) ? {
+      fontSize: '18px',
+      lineHeight: '24px',
+      marginBottom: '15px',
+      fontWeight: '600'
+    } : {};
+
+    // Add tighter spacing for outcome texts
+    const contentStyle = content && typeof content === 'string' && (
+      content.includes("Speeding up data entry by 5x") ||
+      content.includes("Reducing paper trails significantly") ||
+      content.includes("Better user-experience and satisfied users")
+    ) ? {
+      marginBottom: '8px'
+    } : {};
+
+    return (
+      <div className="section-block">
+        {title && <h3 className={titleClasses} style={titleStyle}>{title}</h3>}
+        {imagePosition === 'before' && (images ? renderImages(images) : image && (
+          <div className="section-image">
+            <img src={image} alt={`${title} illustration`} className="img-fluid" />
+          </div>
+        ))}
+        
+        {typeof content === 'string' ? (
+          <p className={contentClasses} style={contentStyle} dangerouslySetInnerHTML={{ __html: formatText(content) }} />
+        ) : Array.isArray(content) ? (
+          <div className="check-box-wrap">
+            <ul className="nested-points-list">
+              {content.map((item, index) => (
+                <li key={index} className="nested-point-item">
+                  {typeof item === 'string' ? (
+                    <h4 className={`check-box-item ${contentFontSize || ''} ${contentLineHeight || ''}`}>
+                      <span className="check-icon">
+                        <i className="fa-solid fa-circle-check" />
+                      </span>
+                      <span dangerouslySetInnerHTML={{ __html: formatText(item) }} />
+                    </h4>
+                  ) : item.mainPoint && item.subPoints ? (
+                    // Nested structure with main point and sub-points
+                    <div className="nested-point-structure">
+                      <h4 className={`check-box-item main-point ${contentFontSize || ''} ${contentLineHeight || ''}`}>
+                        {!item.noIcon && (
+                          <span className="check-icon">
+                            <i className="fa-solid fa-circle-check" />
+                          </span>
+                        )}
+                        <span dangerouslySetInnerHTML={{ __html: formatText(item.mainPoint) }} />
+                      </h4>
+                      {item.subPoints && (
+                        <ul className="sub-points-list">
+                          {item.subPoints.map((subPoint, subIndex) => (
+                            <li key={subIndex} className="sub-point-item">
+                              <span className="sub-point-icon">
+                                <i className="fa-solid fa-arrow-right" />
+                              </span>
+                              <span className={`sub-point-text ${contentFontSize || ''} ${contentLineHeight || ''}`} 
+                                    dangerouslySetInnerHTML={{ __html: formatText(subPoint) }} />
+                              
+                              {/* Handle sub-sub-points */}
+                              {typeof subPoint === 'object' && subPoint.subSubPoints && (
+                                <ul className="sub-sub-points-list">
+                                  {subPoint.subSubPoints.map((subSubPoint, subSubIndex) => (
+                                    <li key={subSubIndex} className="sub-sub-point-item">
+                                      <span className="sub-sub-point-icon">
+                                        <i className="fa-solid fa-minus" />
+                                      </span>
+                                      <span className={`sub-sub-point-text ${contentFontSize || ''} ${contentLineHeight || ''}`} 
+                                            dangerouslySetInnerHTML={{ __html: formatText(subSubPoint) }} />
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {imagePosition === 'after' && (images ? renderImages(images) : image && (
+          <div className="section-image">
+            <img src={image} alt={`${title} illustration`} className="img-fluid" />
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <div className="project-details-area-wrapper tmp-section-gap">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="project-details-thumnail-wrap" style={{ marginBottom: '30px' }}>
+              <Image
+                alt="thumbnail"
+                src={portfolioItem.imageSrc}
+                width={1290}
+                height={560}
+              />
+            </div>
+          </div>
+          <div className="col-lg-8">
+            <div className="project-details-content-wrap">
+              <h2 className={`title ${portfolioItem.titleFontSize || ''} ${portfolioItem.titleFontWeight || ''}`}>
+                {portfolioItem.title}
+              </h2>
+              
+              {/* Project Summary/Introduction */}
+              {portfolioItem.summary && (
+                <div className="project-summary">
+                  <p className={`summary-text ${portfolioItem.descriptionFontSize || ''} ${portfolioItem.descriptionLineHeight || ''}`}>
+                    {portfolioItem.summary}
+                  </p>
+                </div>
+              )}
+              
+              {/* Render sections based on project configuration */}
+              {portfolioItem.sections?.map((section, index) => (
+                <React.Fragment key={index}>
+                  {renderSection(section)}
+                </React.Fragment>
+              ))}
+
+              {/* Fallback to default sections if no custom sections defined */}
+              {!portfolioItem.sections && (
+                <>
+                  {portfolioItem.overview && renderSection({ title: "Overview", content: portfolioItem.overview })}
+                  {portfolioItem.painPoints && renderSection({ title: "Pain Points", content: portfolioItem.painPoints })}
+                  {portfolioItem.solution && renderSection({ title: "Solution", content: portfolioItem.solution, image: portfolioItem.solutionImage })}
+                  {portfolioItem.outcomes && renderSection({ title: "Outcome", content: portfolioItem.outcomes })}
+                  {portfolioItem.userGroups && renderSection({ title: "User Groups", content: portfolioItem.userGroups })}
+                </>
+              )}
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div className="signle-side-bar project-details-area tmponhover">
+              <div className="header">
+                <h3 className="title">Project Details</h3>
+              </div>
+              <div className="body">
+                <div className="project-details-box">
+                  <div className="project-details-info">
+                    {portfolioItem.details?.map((detail, index) => (
+                      <div key={index} className="project-details-info-item">
+                        <span className="project-details-info-title">{detail.label}</span>
+                        <span className="project-details-info-text">
+                          {Array.isArray(detail.value)
+                            ? detail.value.join(', ')
+                            : detail.value}
+                        </span>
+                      </div>
+                    )) || (
+                      <>
+                        <div className="project-details-info-item">
+                          <span className="project-details-info-title">Author</span>
+                          <span className="project-details-info-text">{portfolioItem.author}</span>
+                        </div>
+                        <div className="project-details-info-item">
+                          <span className="project-details-info-title">Date</span>
+                          <span className="project-details-info-text">{portfolioItem.date}</span>
+                        </div>
+                        <div className="project-details-info-item">
+                          <span className="project-details-info-title">Tags</span>
+                          <span className="project-details-info-text">
+                            {portfolioItem.tags?.map((tag, index) => (
+                              <span key={index}>
+                                {tag}
+                                {index < portfolioItem.tags.length - 1 ? ", " : ""}
+                              </span>
+                            ))}
+                          </span>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  {figmaUrl && (
+                    <FigmaViewer figmaUrl={figmaUrl} />
+                  )}
+                  {portfolioItem.liveUrl && (
+                    <a href={portfolioItem.liveUrl} target="_blank" rel="noopener noreferrer" className="live-view-btn">
+                      <i className="fa-solid fa-globe"></i>
+                      <span>View Live Project</span>
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="row">
+          <div className="col-lg-8">
+            {/* Projects Showcase Section */}
+            <ProjectsShowcase currentProjectId={portfolioItem.id} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

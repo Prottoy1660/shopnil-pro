@@ -1,0 +1,296 @@
+@use "../default/variables";
+
+/*===============================
+  Enhanced Certification Cards
+  ===============================*/
+.enhanced-certification-card {
+  position: relative;
+  background: rgba(27, 27, 28, 0.95);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  height: 100%;
+  perspective: 1000px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  // Glassmorphism glow effect
+  .card-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, 
+      rgba(255, 1, 79, 0.1) 0%, 
+      rgba(249, 55, 168, 0.08) 50%, 
+      rgba(255, 1, 79, 0.1) 100%);
+    border-radius: 26px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    filter: blur(2px);
+  }
+
+  // Animated border
+  .card-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    padding: 1px;
+    background: linear-gradient(135deg, 
+      transparent 0%, 
+      rgba(255, 1, 79, 0.4) 50%, 
+      transparent 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Certification Badge
+  .certification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(255, 1, 79, 0.1) 0%, rgba(249, 55, 168, 0.08) 100%);
+    border: 1px solid rgba(255, 1, 79, 0.3);
+    border-radius: 50px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 12px rgba(255, 1, 79, 0.15);
+    width: fit-content;
+
+    .badge-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      color: #ff014f;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .badge-text {
+      color: #ff014f;
+      font-family: var(--font-primary);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+  }
+
+  // Certificate Title
+  .cert-title {
+    color: var(--color-heading);
+    font-family: var(--font-primary);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    
+    @media #{variables.$md-layout} {
+      font-size: 20px;
+    }
+    
+    @media #{variables.$sm-layout} {
+      font-size: 18px;
+    }
+  }
+
+  // Certificate Issuer
+  .cert-issuer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  }
+
+  // Certificate Description
+  .cert-description {
+    color: var(--color-body);
+    font-family: var(--font-secondary);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top: auto;
+    transition: all 0.3s ease;
+    
+    @media #{variables.$sm-layout} {
+      font-size: 14px;
+    }
+  }
+
+  // Hover Effects
+  &:hover {
+    background: linear-gradient(135deg, 
+      rgba(255, 1, 79, 0.95) 0%, 
+      rgba(249, 55, 168, 0.9) 100%);
+    box-shadow: 0 20px 60px rgba(255, 1, 79, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+
+    .card-glow {
+      opacity: 1;
+    }
+
+    .card-border {
+      opacity: 1;
+    }
+
+    .certification-badge {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+
+      .badge-icon,
+      .badge-text {
+        color: #ffffff;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media #{variables.$lg-layout} {
+    padding: 32px;
+  }
+
+  @media #{variables.$md-layout} {
+    padding: 28px;
+  }
+
+  @media #{variables.$sm-layout} {
+    padding: 24px;
+    
+    .certification-badge {
+      padding: 10px 16px;
+      
+      .badge-text {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+// Title Icon Container
+.certification-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #f937a8 100%);
+  border-radius: 12px;
+  margin-right: 16px;
+  box-shadow: 0 4px 15px rgba(255, 1, 79, 0.3);
+  transition: all 0.3s ease;
+
+  i {
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  @media #{variables.$sm-layout} {
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
+    
+    i {
+      font-size: 16px;
+    }
+  }
+}
+
+// Enhanced scroll animations
+.enhanced-certification-card {
+  opacity: 0;
+  transform: translateY(40px) rotateX(-10deg);
+  animation: certificationFadeInUp 0.8s ease forwards;
+}
+
+@keyframes certificationFadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+// Staggered animation delays
+.enhanced-certification-card:nth-child(1) { animation-delay: 0.1s; }
+.enhanced-certification-card:nth-child(2) { animation-delay: 0.3s; }
+.enhanced-certification-card:nth-child(3) { animation-delay: 0.5s; }
+.enhanced-certification-card:nth-child(4) { animation-delay: 0.7s; }
+
+// Badge pulse animation
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(255, 1, 79, 0.15);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 1, 79, 0.25);
+  }
+}
+
+.enhanced-certification-card:hover .certification-badge {
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+// Dark theme enhancements
+@media (prefers-color-scheme: dark) {
+  .enhanced-certification-card {
+    background: rgba(15, 15, 15, 0.95);
+    border-color: rgba(255, 255, 255, 0.05);
+
+    &:hover {
+      background: linear-gradient(135deg, 
+        rgba(255, 1, 79, 0.9) 0%, 
+        rgba(249, 55, 168, 0.85) 100%);
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .enhanced-certification-card,
+  .certification-badge,
+  .certification-icon-container {
+    animation: none;
+    transition: none;
+  }
+
+  .enhanced-certification-card:hover {
+    transform: none;
+  }
+}

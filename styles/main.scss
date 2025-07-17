@@ -1,0 +1,12 @@
+@use "sass:meta";
+@import "@/public/assets/css/vendor/fontawesome.css";
+@import "@/public/assets/css/plugins/swiper.css";
+@import "@/public/assets/css/plugins/odometer.css";
+@import "@/public/assets/css/vendor/animate.min.css";
+@import "@/public/assets/css/vendor/bootstrap.min.css";
+@import "scss/elements/_theme-toggle.scss";
+@import "scss/elements/_font-utilities.scss";
+
+// custom css
+@import "scss/style.scss";
+@import "scss/custom.scss";
