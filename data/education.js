@@ -2,22 +2,22 @@ export const educationResumeItems = [
   {
     duration: "2019 - 2020",
     title: "SENECA COLLEGE",
-    institute: "Diploma in Interactive Media Design",
+    institute: "POSTGRADUATE DIPLOMA IN INTERACTIVE MEDIA DESIGN",
   },
   {
     duration: "2011 - 2012",
     title: "NORTH SOUTH UNIVERSITY",
-    institute: "Bachelor in Computer Science",
+    institute: "BACHELOR OF SCIENCE IN COMPUTER SCIENCE",
   },
   {
     duration: "2008 - 2011",
     title: "SZABIST UNIVERSITY",
-    institute: "Bachelor in Computer Science",
+    institute: "BACHELOR OF SCIENCE IN COMPUTER SCIENCE",
   },
   {
     duration: "2006 - 2008",
     title: "Cambridge International Education",
-    institute: "A Levels, Business/Managerial Economics",
+    institute: "A LEVELS- BUSINESS STUDIES, ECONOMICS AND ACCOUNTING",
     isLast: true, // to apply the mb--0 class
   },
 ];

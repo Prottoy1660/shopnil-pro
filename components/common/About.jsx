@@ -169,27 +169,7 @@ export default function About({ parentClass = "about-us-area" }) {
                   </motion.div>
                 </div>
               </div>
-              <motion.div 
-                className="about-btn mt--40"
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  className="tmp-btn hover-icon-reverse radius-round"
-                  href={`/#about`}
-                >
-                  <span className="icon-reverse-wrapper">
-                    <span className="btn-text">Read More About Me</span>
-                    <span className="btn-icon">
-                      <i className="fa-sharp fa-regular fa-arrow-right" />
-                    </span>
-                    <span className="btn-icon">
-                      <i className="fa-sharp fa-regular fa-arrow-right" />
-                    </span>
-                  </span>
-                </Link>
-              </motion.div>
+
             </div>
           </div>
         </motion.div>
