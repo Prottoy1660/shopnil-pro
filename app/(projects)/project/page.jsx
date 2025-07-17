@@ -1,5 +1,5 @@
 import Copyright from "@/components/footers/Copyright";
-import Footer3 from "@/components/footers/Footer3";
+import Footer2 from "@/components/footers/Footer2";
 import Header1 from "@/components/headers/Header1";
 import React from "react";
 
@@ -15,7 +15,7 @@ export default function page() {
         <Header1 />
         {/* Blank content area */}
         <div style={{ minHeight: "60vh" }}></div>
-        <Footer3 />
+        <Footer2 />
         <Copyright />
       </div>
     </>
