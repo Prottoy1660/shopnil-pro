@@ -238,7 +238,7 @@ export const portfolioItems = [
       },
       {
         label: "Duration: ",
-        value: "5 years"
+        value: "6 Month"
       },
       {
         label: "Company: ",
@@ -246,6 +246,7 @@ export const portfolioItems = [
       }
     ],
     figmaUrl: "https://embed.figma.com/design/fPGy7ZU0xdfaMRfhsoYvcr/CytoConnect?node-id=0-1&embed-host=share",
+    liveUrl: "https://www.dynacare.ca",
     summary: "",
     sections: [
       {
@@ -383,7 +384,7 @@ export const portfolioItems = [
       },
       {
         label: "Duration: ",
-        value: "2 years"
+        value: "1 years"
       },
       {
         label: "Company: ",
