@@ -3,6 +3,16 @@ import { slugify } from "@/utils/slugify";
 // Case Studies - Using existing portfolio items that have detailed case studies
 export const caseStudies = [
   {
+    id: 1,
+    imageSrc: "/assets/images/latest-portfolio/dynacare.png",
+    width: 1939,
+    height: 1572,
+    title: "Dynacare LIS",
+    description: "A modern portal design for the ECCF organization, featuring appointment scheduling and patient management.",
+    tags: ["Figma", "UI/UX", "Healthcare"],
+    slug: "dynacare-lis"
+  },
+  {
     id: 2,
     imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
     width: 1939,
@@ -13,24 +23,14 @@ export const caseStudies = [
     slug: "bank-of-montreal"
   },
   {
-    id: 5,
-    imageSrc: "/assets/images/latest-portfolio/eccf-portal.png",
-    width: 1939,
+    id: 3,
+    imageSrc: "/assets/images/latest-portfolio/awaj.png",
+    width: 1920,
     height: 1572,
-    title: "Dynacare ECCF Portal",
-    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
-    tags: ["Figma", "UI/UX", "Healthcare"],
-    slug: "eccf-portal"
-  },
-  {
-    id: 1,
-    imageSrc: "/assets/images/latest-portfolio/dynacare.png",
-    width: 1939,
-    height: 1572,
-    title: "Dynacare LIS",
-    description: "A modern portal design for the ECCF organization, featuring appointment scheduling and patient management.",
-    tags: ["Figma", "UI/UX", "Healthcare"],
-    slug: "dynacare-lis"
+    title: "Awaj Foundation",
+    description: "A case of an impactful website and how it made a difference to many lives.",
+    tags: ["Figma", "UI/UX", "Non-profit"],
+    slug: "awaj-foundation"
   },
   {
     id: 4,
@@ -43,14 +43,14 @@ export const caseStudies = [
     slug: "augmedix-inc"
   },
   {
-    id: 3,
-    imageSrc: "/assets/images/latest-portfolio/awaj.png",
-    width: 1920,
+    id: 5,
+    imageSrc: "/assets/images/latest-portfolio/eccf-portal.png",
+    width: 1939,
     height: 1572,
-    title: "Awaj Foundation",
-    description: "A case of an impactful website and how it made a difference to many lives.",
-    tags: ["Figma", "UI/UX", "Non-profit"],
-    slug: "awaj-foundation"
+    title: "Dynacare ECCF Portal",
+    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
+    tags: ["Figma", "UI/UX", "Healthcare"],
+    slug: "eccf-portal"
   },
   {
     id: 6,
