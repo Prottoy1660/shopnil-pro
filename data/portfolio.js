@@ -19,7 +19,7 @@ export const portfolioItems = [
     date: "6 June, 2025",
     tags: ["Figma", "UI/UX", "Non-profit"],
     categories: ["UI/UX Design", "Non-profit", "Web Application"],
-    showInAll: false,
+    showInAll: true,
     allOrder: 3,
     details: [
       {
@@ -129,7 +129,7 @@ export const portfolioItems = [
     date: "6 June, 2025",
     tags: ["Figma", "UI/UX", "Healthcare"],
     categories: ["UI/UX Design", "Healthcare", "Web Application"],
-    showInAll: true,
+    showInAll: false,
     allOrder: 4,
     details: [
       {
