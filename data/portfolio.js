@@ -8,8 +8,8 @@ import { slugify } from "@/utils/slugify";
 
 export const portfolioItems = [
   {
-    id: 5,
-    animationOrder: 5,
+    id: 3,
+    animationOrder: 3,
     imageSrc: "/assets/images/latest-portfolio/awaj.png",
     width: 1920,
     height: 1572,
@@ -20,7 +20,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Non-profit"],
     categories: ["UI/UX Design", "Non-profit", "Web Application"],
     showInAll: false,
-    allOrder: 5,
+    allOrder: 3,
     details: [
       {
         label: "Role: ",
@@ -218,8 +218,8 @@ export const portfolioItems = [
     ]
   },
   {
-    id: 3,
-    animationOrder: 3,
+    id: 1,
+    animationOrder: 1,
     imageSrc: "/assets/images/latest-portfolio/dynacare.png",
     width: 1939,
     height: 1572,
@@ -230,7 +230,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Healthcare"],
     categories: ["UI/UX Design", "Healthcare", "Web Application"],
     showInAll: true,
-    allOrder: 3,
+    allOrder: 1,
     details: [
       {
         label: "Role: ",
@@ -250,122 +250,190 @@ export const portfolioItems = [
     summary: "",
     sections: [
       {
-        title: "Overview",
-        content: "Dynacare is one of the leading testing labs in Canada. Cytology department at DynaCare studies cells, including their origin, structure, function, and any signs of disease, using microscopic examination. It involves analyzing cells from bodily fluids or tissues to diagnose diseases, particularly cancer. But they're using legacy systems which is agonizingly slow and inefficient. Recording or retrieving patient data at the lab makes it challenging for the lab professionals.",
-      },
-      {
-        title: "Previous States",
-        image: "/assets/images/latest-portfolio/DNOE SP UI & Omni V6.png",
-        imagePosition: "before"
-      },
-      {
-        title: "Problem Statement",
-        content: "Every second is pivotal in healthcare. Saving a second could mean saving a life. However, medical laboratories in Canada face several significant challenges, including operational, technological, and user-related issues. As a result, the backlog of test results adds up significant time to get the test results. Also need to reduce the paper-trail.",
-      },
-      {
-        title: "Users & Audience",
-        content: "Primary users of this application are the data entry professionals and lab clinicians from Cytology department. There are other stakeholders involved too, such as, the clinicians, patients and specimen collectors.",
-      },
-      {
-        title: "Scope & Constraints",
-      },
-      {
-        title: "Challenge 1: Fitting 7 Pages into 1 Screen",
-        image: "/assets/images/latest-portfolio/1. AOE - Dashboard.png",
-        imagePosition: "before"
-      },
-      {
-        title: "Challenge 2: Fitting PDF Viewer on top of that",
-        image: "/assets/images/latest-portfolio/3. AOE Dashboard - Dropdown Expanded 1.png",
-        imagePosition: "before"
-      },
-      {
-        title: "Challenge 3: Designing the dark mode because some of them works at night shift",
-        image: "/assets/images/latest-portfolio/Dashboard 1.png",
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide1.png",
         imagePosition: "before"
       },
       {
         title: "",
-        content: "**User-Centered Research:** Conduct thorough user research with lab staff, clinicians, and patients to understand their needs, pain points, and workflows. This ensures that solutions are tailored to real-world use cases.",
+        image: "/assets/images/latest-portfolio/Slide2.png",
+        imagePosition: "before"
       },
       {
         title: "",
-        content: "**Simplified Interfaces:** Design intuitive interfaces that reduce complexity, using clear language, visual hierarchies, and data visualization to make information accessible to all users.",
+        image: "/assets/images/latest-portfolio/Slide3.png",
+        imagePosition: "before"
       },
       {
         title: "",
-        content: "**Iterative Testing:** Perform usability testing with diverse user groups to identify and address issues early, ensuring that interfaces are functional, accessible, and inclusive.",
+        image: "/assets/images/latest-portfolio/Slide4.png",
+        imagePosition: "before"
       },
       {
         title: "",
-        content: "**Stakeholder Collaboration:** Work closely with developers, lab managers, and regulatory experts to align designs with technical and compliance requirements, ensuring seamless implementation.",
+        image: "/assets/images/latest-portfolio/Slide5.png",
+        imagePosition: "before"
       },
       {
         title: "",
-        content: "**Emotional Sensitivity:** Create interfaces that consider the emotional needs of users, such as patients receiving distressing lab results, by using empathetic language and supportive design elements.",
-      },
-      {
-        title: "Process & Actions",
-      },
-      {
-        title: "Previous process:",
-        content: [
-          "Clinician orders a test by writing a requisition form",
-          "Patient brings the requisition form to the test center",
-          "Test center manually registers the patient and enters all the data under the healthcard",
-          "Patient drops specimen",
-          "The specimen along with the form travels to the lab",
-          "A lab receiver receives it in bulk and sends it to the technician for testing",
-          "Technician tests and enters the results",
-          "Results are manually sent back to the main via fax clinician/CC clinicians"
-        ]
-      },
-      {
-        title: "New process:",
-        content: [
-          "Clinician orders with a requisition form",
-          "Patient takes a picture of the form, uploads it on DC plus and books appointment",
-          "Patient data is automatically populated from the picture to lab systems",
-          "Specimen collection centers verifies the information and submits",
-          "Lab receiver access the data without having to manually type it",
-          "Technicians can also check everything and sends the results back through the system"
-        ]
-      },
-      {
-        title: "Outcome & Lessons",
-        content: "Speeding up data entry by 5x"
+        image: "/assets/images/latest-portfolio/Slide6.png",
+        imagePosition: "before"
       },
       {
         title: "",
-        content: "Reducing paper trails significantly"
+        image: "/assets/images/latest-portfolio/Slide7.png",
+        imagePosition: "before"
       },
       {
         title: "",
-        content: "Better user-experience and satisfied users"
-      },
-    ],
-    galleryImages: [
-      {
-        src: "/assets/images/latest-portfolio/01 Login Screen.png",
-        alt: "LabEase design - Main Image"
+        image: "/assets/images/latest-portfolio/Slide8.png",
+        imagePosition: "before"
       },
       {
-        src: "/assets/images/latest-portfolio/02 Submit Order.png",
-        alt: "LabEase design - Gallery Image 1"
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide9.png",
+        imagePosition: "before"
       },
       {
-        src: "/assets/images/latest-portfolio/03 Search orders.png",
-        alt: "LabEase design - Gallery Image 2"
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide10.png",
+        imagePosition: "before"
       },
       {
-        src: "/assets/images/latest-portfolio/04 Print Manifest.jpg",
-        alt: "LabEase design - Gallery Image 3"
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide11.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide12.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide13.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide14.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide15.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide16.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide17.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide18.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide19.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide20.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide21.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide22.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide23.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide24.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide25.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide26.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide27.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide28.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide29.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide30.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide31.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide32.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide33.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide34.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide35.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Slide36.png",
+        imagePosition: "before"
       }
     ]
   },
   {
-    id: 1,
-    animationOrder: 1,
+    id: 2,
+    animationOrder: 2,
     imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
     width: 1939,
     height: 1572,
@@ -376,7 +444,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Fintech"],
     categories: ["UI/UX Design", "Fintech", "Web Application"],
     showInAll: true,
-    allOrder: 1,
+    allOrder: 2,
     details: [
       {
         label: "Role: ",
@@ -878,19 +946,19 @@ export const portfolioItems = [
     ]
   },
     {
-    id: 2,
-    animationOrder: 2,
+    id: 5,
+    animationOrder: 5,
         imageSrc: "/assets/images/latest-portfolio/eccf-portal.png",
         width: 1939,
         height: 1572,
-        title: "ECCF Portal",
+        title: "Dynacare ECCF Portal",
         description: "A modern portal design for the ECCF organization, featuring appointment scheduling, patient management, and administrative tools. Includes a responsive design optimized for all devices.",
         author: "Shopnil Mahamud",
         date: "6 June, 2025",
         tags: ["Figma", "UI/UX", "Healthcare"],
         categories: ["UI/UX Design", "Healthcare", "Web Application"],
         showInAll: true,
-        allOrder: 2,
+        allOrder: 5,
         details: [
           {
             label: "Role: ",
