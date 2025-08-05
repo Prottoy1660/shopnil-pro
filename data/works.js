@@ -4,6 +4,16 @@ import { slugify } from "@/utils/slugify";
 export const caseStudies = [
   {
     id: 1,
+    imageSrc: "/assets/images/latest-portfolio/ax_cp.png",
+    width: 1939,
+    height: 1572,
+    title: "Augmedix Inc.",
+    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
+    tags: ["Figma", "UI/UX", "Healthcare"],
+    slug: "augmedix-inc"
+  },
+  {
+    id: 2,
     imageSrc: "/assets/images/latest-portfolio/dynacare.png",
     width: 1939,
     height: 1572,
@@ -11,16 +21,6 @@ export const caseStudies = [
     description: "A modern portal design for the ECCF organization, featuring appointment scheduling and patient management.",
     tags: ["Figma", "UI/UX", "Healthcare"],
     slug: "dynacare-lis"
-  },
-  {
-    id: 2,
-    imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
-    width: 1939,
-    height: 1572,
-    title: "Bank of Montreal",
-    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
-    tags: ["Figma", "UI/UX", "Fintech"],
-    slug: "bank-of-montreal"
   },
   {
     id: 3,
@@ -34,13 +34,13 @@ export const caseStudies = [
   },
   {
     id: 4,
-    imageSrc: "/assets/images/latest-portfolio/ax_cp.png",
+    imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
     width: 1939,
     height: 1572,
-    title: "Augmedix Inc.",
+    title: "Bank of Montreal",
     description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
-    tags: ["Figma", "UI/UX", "Healthcare"],
-    slug: "augmedix-inc"
+    tags: ["Figma", "UI/UX", "Fintech"],
+    slug: "bank-of-montreal"
   },
   {
     id: 5,

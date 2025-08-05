@@ -118,8 +118,8 @@ export const portfolioItems = [
     ]
   },
   {
-    id: 4,
-    animationOrder: 4,
+    id: 1,
+    animationOrder: 1,
     imageSrc: "/assets/images/latest-portfolio/ax_cp.png",
     width: 1939,
     height: 1572,
@@ -129,8 +129,8 @@ export const portfolioItems = [
     date: "6 June, 2025",
     tags: ["Figma", "UI/UX", "Healthcare"],
     categories: ["UI/UX Design", "Healthcare", "Web Application"],
-    showInAll: false,
-    allOrder: 4,
+    showInAll: true,
+    allOrder: 1,
     details: [
       {
         label: "Role: ",
@@ -261,8 +261,8 @@ export const portfolioItems = [
     ]
   },
   {
-    id: 1,
-    animationOrder: 1,
+    id: 2,
+    animationOrder: 2,
     imageSrc: "/assets/images/latest-portfolio/dynacare.png",
     width: 1939,
     height: 1572,
@@ -273,7 +273,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Healthcare"],
     categories: ["UI/UX Design", "Healthcare", "Web Application"],
     showInAll: true,
-    allOrder: 1,
+    allOrder: 2,
     details: [
       {
         label: "Role: ",
@@ -475,8 +475,8 @@ export const portfolioItems = [
     ]
   },
   {
-    id: 2,
-    animationOrder: 2,
+    id: 4,
+    animationOrder: 4,
     imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
     width: 1939,
     height: 1572,
@@ -487,7 +487,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Fintech"],
     categories: ["UI/UX Design", "Fintech", "Web Application"],
     showInAll: true,
-    allOrder: 2,
+    allOrder: 4,
     details: [
       {
         label: "Role: ",
@@ -1000,7 +1000,7 @@ export const portfolioItems = [
         date: "6 June, 2025",
         tags: ["Figma", "UI/UX", "Healthcare"],
         categories: ["UI/UX Design", "Healthcare", "Web Application"],
-        showInAll: true,
+        showInAll: false,
         allOrder: 5,
         details: [
           {
