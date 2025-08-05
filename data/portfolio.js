@@ -149,71 +149,124 @@ export const portfolioItems = [
     summary: "",
     sections: [
       {
-        title: "Overview",
-        content: "It takes days and sometimes months in the US to get an appointment with a healthcare practitioner. After such agonizing long waits, patients expect to get some attention so they could explain their health issues and get valuable feedback from their doctors. However, the true story almost all the time is that the physicians run out of time to properly care for their patients. What takes the majority of their time? It's Electronic Health Record (EHR) or in other words - 'Documentation'.",
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide1.png",
+        imagePosition: "before"
       },
       {
-        title: "Pain points",
-        content: [
-          "It is mandatory for the health care practitioners to input medical reports after each of their visits.",
-          "It is expensive to hire a medical scribe in the US who would assist them to do it.",
-          "Many of the experienced physicians are older and not keen on typing, and that's not their strength either.",
-          "Their time is precious and potentially life-saving for patients and more time would mean opportunity to address more patients."        ],
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide2.png",
+        imagePosition: "before"
       },
       {
-        title: "Solution",
-        content: "After extensive research, we came up with a solution that helps address these pain-points and come up with a medical documentation tool using highly sophisticated technologies. Physicians would wear an augmented smart device such as Google Glass or a smartphone to live stream their patient visits. Since it is inexpensive to hire medical scribes in countries like Bangladesh, India, Sri Lanka and Dominican Republic, remote scribes are able to listen, observe and document all the necessary information for their doctors. They can also interact if there is any confusion, all in real-time. Doctors then quickly go through the records and approve them after each visit, eventually saving them time, energy and patients are also happy to be able to interact and have full focus from their doctors.",
-        images: [
-           "/assets/images/latest-portfolio/ax-solution.png",
-           "/assets/images/latest-portfolio/ax-solution-portal.png", 
-        ],
-        imagePosition: "after"
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide3.png",
+        imagePosition: "before"
       },
       {
-        title: "Outcome",
-        content: [
-          "These tools helped resolving these issues and the data has shown that",
-          "This portal improves the overall documentation experience by 80 percent as compared to a conventional scribing service.",
-          "Remote scribing is much more inexpensive than in person scribing",
-          "Clinicians can now focus more on their patients' care as they no longer have to type everything. It saves them an average 2-3 hours daily.",
-          "Patient notes are more accurate than ever as the data are very well structured and populated in the builder part. They are also very easily accessible through the portal."
-                   ],
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide4.png",
+        imagePosition: "before"
       },
       {
-        title: "User Groups",
-        content: "Remote scribes are trained professionals in the US healthcare system and medical terms who are very good in English listening and writing. They are generally aged between 26-36 and located in aforementioned countries where Augmedix has scribing facilities following strict compliance.",
-        images: [
-          "/assets/images/latest-portfolio/ax-feature-1.png",
-          "/assets/images/latest-portfolio/ax-feature-2.png",
-          "/assets/images/latest-portfolio/ax-feature-3.png",
-        ],
-        imagePosition: "after"
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide5.png",
+        imagePosition: "before"
       },
       {
-        title: "Log Portal",
-        images: [
-          "/assets/images/latest-portfolio/user-flow.png",
-          "/assets/images/latest-portfolio/log-portal.png",
-        ],
-        imagePosition: "after"
-      },
-    ],
-    galleryImages: [
-      {
-        src: "/assets/images/latest-portfolio/01 Login Screen.png",
-        alt: "LabEase design - Main Image"
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide6.png",
+        imagePosition: "before"
       },
       {
-        src: "/assets/images/latest-portfolio/02 Submit Order.png",
-        alt: "LabEase design - Gallery Image 1"
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide7.png",
+        imagePosition: "before"
       },
       {
-        src: "/assets/images/latest-portfolio/03 Search orders.png",
-        alt: "LabEase design - Gallery Image 2"
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide8.png",
+        imagePosition: "before"
       },
       {
-        src: "/assets/images/latest-portfolio/04 Print Manifest.jpg",
-        alt: "LabEase design - Gallery Image 3"
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide9.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide10.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide11.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide12.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide13.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide14.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide15.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide16.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide17.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide18.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide19.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide20.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide21.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide22.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide23.png",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Augmedix/Slide24.png",
+        imagePosition: "before"
       }
     ]
   },
