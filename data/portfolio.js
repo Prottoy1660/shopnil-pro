@@ -223,13 +223,9 @@ export const portfolioItems = [
         images: [
           "/assets/images/latest-portfolio/Augmedix/Slide15.png",
           "/assets/images/latest-portfolio/Augmedix/Slide16.png",
-          "/assets/images/latest-portfolio/Augmedix/Slide17.png"
+          "/assets/images/latest-portfolio/Augmedix/Slide17.png",
+          "/assets/images/latest-portfolio/Augmedix/Slide18.png"
         ],
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Augmedix/Slide18.png",
         imagePosition: "before"
       },
       {
