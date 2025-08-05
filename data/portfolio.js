@@ -220,17 +220,11 @@ export const portfolioItems = [
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Augmedix/Slide15.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Augmedix/Slide16.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Augmedix/Slide17.png",
+        images: [
+          "/assets/images/latest-portfolio/Augmedix/Slide15.png",
+          "/assets/images/latest-portfolio/Augmedix/Slide16.png",
+          "/assets/images/latest-portfolio/Augmedix/Slide17.png"
+        ],
         imagePosition: "before"
       },
       {
