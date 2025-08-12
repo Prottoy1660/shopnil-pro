@@ -24,11 +24,11 @@ export default function Home() {
       <Header1 />
       <Hero />
       <TextAnim />
+      <Portofolio />
       <About />
       <Experience />
       <Certification />
       <Skills/>
-      <Portofolio />
       <Testimonials />
       <Contact />
       <Footer2/>

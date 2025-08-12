@@ -36,16 +36,9 @@ export default function Portofolio({ isLight = false }) {
       <div className="container">
         <div className="section-head mb--60">
           <div className="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-            <span className="subtitle">Latest Portfolio</span>
+            <span className="subtitle">Case studys</span>
           </div>
-          <h2 className="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
-            Expert in fintech, healthcare, eCommerce, and marketing domains.<br />
-          </h2>
-          <p className="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
-            As a UI/UX designer, I transform complex problems into elegant, user-centered solutions. 
-            Each project showcases my passion for creating intuitive interfaces and memorable digital experiences 
-            that connect users with brands.
-          </p>
+
         </div>
         <div className="latest-portfolio-tabs-area">
           <nav>
