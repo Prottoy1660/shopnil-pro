@@ -19,7 +19,7 @@ export default function Copyright() {
               </p>{" "}
               <ul className="tmp-link-animation dark-content">
                 <li>
-                  <a href="#">Trams &amp; Condition</a>
+                  <a href="#">Terms &amp; Condition</a>
                 </li>
                 <li>
                   <a href="#">Privacy Policy</a>
@@ -30,7 +30,7 @@ export default function Copyright() {
               </ul>
               <ul className="tmp-link-animation light-content">
                 <li>
-                  <a href="#">Trams &amp; Condition</a>
+                  <a href="#">Terms &amp; Condition</a>
                 </li>
                 <li>
                   <a href="#">Privacy Policy</a>
