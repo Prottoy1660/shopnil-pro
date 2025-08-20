@@ -11,14 +11,14 @@ export default function Hero() {
         <div className="banner-five-main-wrapper">
           <div className="inner mb-6">
             <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-1 tmp-title-split">
-              Hi, I'm Shopnil Mahamud a<br />{" "}
+              I’m a Sr. Product designer<br />{" "}
               <span className="header-caption">
                 <span className="cd-headline clip is-full-width">
                   <TyperComponent
                     strings={[
-                      "Creative thinker",
-                      "Problem solver",
-                      "Product & UX designer"
+                      "SaaS, B2B, B2C",
+                      "Health & Fintech",
+                      "Creative Storyteller"
                     ]}
                     className="theme-gradient"
                   />
