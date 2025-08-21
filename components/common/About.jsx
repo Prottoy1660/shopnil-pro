@@ -78,7 +78,7 @@ export default function About({ parentClass = "about-us-area" }) {
                 variants={counterVariants}
               >
                 <h2 className="counter card-title">
-                  <OdometerComponent max={15} /> +
+                  <OdometerComponent max={12} /> +
                 </h2>
                 <p className="card-para">Years of Problem Solving</p>
               </motion.div>
@@ -93,7 +93,7 @@ export default function About({ parentClass = "about-us-area" }) {
                 </div>
                 <div className="card-info">
                   <h3 className="card-title">UI/UX</h3>
-                  <p className="card-para">100+ Projects</p>
+                  <p className="card-para">90+ Projects</p>
                 </div>
               </motion.div>
             </div>
@@ -114,13 +114,13 @@ export default function About({ parentClass = "about-us-area" }) {
                   className="title split-collab"
                   variants={itemVariants}
                 >
-                  Solving problems clients feel but can't express.
+                  I design software that's simple to use and helps businesses achieve their goals.
                 </motion.h2>
                 <motion.p 
                   className="description"
                   variants={itemVariants}
                 >
-                  I stand at the confluence where design and code intersect. I'm a natural problem solver who have been involved with the product and UI UX design for 15+ years starting from a Silicon valley startup working on complex Google Glass projects for US based healthcare system to Designing cutting edge financial web apps for Bank of Montreal.
+                  I excel in high-stakes, regulated environments-translating complex business needs into elegant, user-centred experiences through rapid prototyping, cross-functional alignment, and thoughtful documentation.
                 </motion.p>
               </motion.div>
               <div className="about-us-section-card row g-5">

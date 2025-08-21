@@ -5,35 +5,29 @@ import "@/styles/skills.css";
 
 // Icon mapping for skills with their brand colors and gradient combinations
 const skillIcons = {
-  "Node.js": {
-    src: "/assets/images/skill/nodejs.png",
-    color: "#339933",
-    colorRgb: "51, 153, 51",
-    gradient: "linear-gradient(135deg, #339933 0%, #4CAF50 100%)"
+  "Framer": {
+    src: "/assets/images/skill/Framer.png",
+    color: "#e9e9e9",
+    colorRgb: "233, 233, 233",
+    gradient: "linear-gradient(135deg,#e9e9e9 0%,rgb(227, 238, 236) 100%)"
   },
-  "React": {
-    src: "/assets/images/skill/react.png",
-    color: "#61DAFB",
-    colorRgb: "97, 218, 251",
-    gradient: "linear-gradient(135deg, #61DAFB 0%, #282C34 100%)"
+  "Maze": {
+    src: "/assets/images/skill/Maze.png",
+    color: "#1a41c2",
+    colorRgb: "26, 65, 194",
+    gradient: "linear-gradient(135deg,#1a41c2 0%,rgb(7, 72, 202) 100%)"
   },
-  "JavaScript": {
-    src: "/assets/images/skill/javascript.png",
+  "Uizard": {
+    src: "/assets/images/skill/Uizard.png",
     color: "#F7DF1E",
     colorRgb: "247, 223, 30",
-    gradient: "linear-gradient(135deg, #F7DF1E 0%, #F0DB4F 100%)"
+    gradient: "linear-gradient(135deg,rgb(228, 188, 13) 0%, #F0DB4F 100%)"
   },
-  "HTML/CSS": {
-    src: "/assets/images/skill/html-css.png",
-    color: "#E34F26",
-    colorRgb: "227, 79, 38",
-    gradient: "linear-gradient(135deg, #E34F26 0%, #264DE4 100%)"
-  },
-  "PHP/Laravel": {
-    src: "/assets/images/skill/laravel.png",
-    color: "#FF2D20",
-    colorRgb: "255, 45, 32",
-    gradient: "linear-gradient(135deg, #FF2D20 0%, #FF6B6B 100%)"
+  "Justinmind": {
+    src: "/assets/images/skill/Justinmind.png",
+    color: "#fa2061",
+    colorRgb: "250, 32, 97",
+    gradient: "linear-gradient(135deg,rgb(250, 32, 97) 0%,rgb(38, 136, 228) 100%)"
   },
   "Figma": {
     src: "/assets/images/skill/figma.png",
@@ -58,12 +52,6 @@ const skillIcons = {
     color: "#FF9A00",
     colorRgb: "255, 154, 0",
     gradient: "linear-gradient(135deg, #FF9A00 0%, #FF6B6B 100%)"
-  },
-  "UI/UX Design": {
-    src: "/assets/images/skill/ui-ux.png",
-    color: "#7C4DFF",
-    colorRgb: "124, 77, 255",
-    gradient: "linear-gradient(135deg, #7C4DFF 0%, #448AFF 100%)"
   }
 };
 
@@ -148,7 +136,7 @@ export default function Skills({
                               visibility: "visible",
                               animationDuration: skill.duration,
                               animationDelay: skill.delay,
-                              background: iconData.gradient,
+                              backgroundImage: iconData.gradient,
                               backgroundSize: "200% 100%",
                               "--progress-width": `${skill.percent}%`,
                               transition: "width 1s ease-in-out",

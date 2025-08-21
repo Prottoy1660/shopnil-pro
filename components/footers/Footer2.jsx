@@ -98,7 +98,7 @@ export default function Footer2({
                     </Link>
                   </div>
                   <p className="description">
-                  Focused on building brands and creating digital experiences for 15+ years, currently based in Toronto, Canada
+                  Focused on building brands and creating digital experiences for 12+ years, currently based in Toronto, Canada
                   </p>
                   <div className="social-link footer">
                     <a href="https://www.instagram.com/shopnil.journey" target="_blank" rel="noopener noreferrer">

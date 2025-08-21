@@ -27,7 +27,7 @@ export const countData = [
 ];
 
 export const counters2 = [
-  { count: 15, suffix: "+", text: "Years Experience", animationOrder: 1 },
-  { count: 100, suffix: "+", text: "Completed Projects", animationOrder: 2 },
-  { count: 70, suffix: "+", text: "Satisfied Clients", animationOrder: 3 },
+  { count: 12, suffix: "+", text: "Years Experience", animationOrder: 1 },
+  { count: 90, suffix: "+", text: "Completed Projects", animationOrder: 2 },
+  { count: 10, suffix: "M+", text: "Users impacted", animationOrder: 3 },
 ];

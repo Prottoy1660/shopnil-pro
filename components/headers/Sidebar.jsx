@@ -193,7 +193,7 @@ export default function Sidebar() {
                 lineHeight: '1.7',
                 marginBottom: '25px'
               }}>
-                Focused on building brands and creating digital experiences for 15+ years, currently based in Toronto, Canada
+                Focused on building brands and creating digital experiences for 12+ years, currently based in Toronto, Canada
               </p>
             </div>
 
@@ -374,98 +374,17 @@ export default function Sidebar() {
                 justifyContent: 'center',
                 gap: '15px'
               }}>
-                <a href="https://www.instagram.com/shopnil.journey" target="_blank" rel="noopener noreferrer" className="social-icon" style={{
-                  width: '40px',
-                  height: '40px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(255, 255, 255, 0.05)',
-                  color: 'var(--color-heading)',
-                  transition: 'all 0.3s ease',
-                  textDecoration: 'none',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  <div className="social-icon-glow" style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    background: 'var(--color-primary)',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease'
-                  }} />
-                  <i className="fa-brands fa-instagram" style={{
-                    position: 'relative',
-                    zIndex: 1,
-                    transition: 'all 0.3s ease'
-                  }} />
+                <a href="https://www.instagram.com/shopnil.journey" target="_blank" rel="noopener noreferrer" className="social-icon sidebar-social-link">
+                  <div className="social-icon-glow sidebar-glow" />
+                  <i className="fa-brands fa-instagram sidebar-icon" />
                 </a>
-                <a href="https://www.linkedin.com/in/shopnilm" target="_blank" rel="noopener noreferrer" className="social-icon" style={{
-                  width: '40px',
-                  height: '40px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(255, 255, 255, 0.05)',
-                  color: 'var(--color-heading)',
-                  transition: 'all 0.3s ease',
-                  textDecoration: 'none',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  <div className="social-icon-glow" style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    background: 'var(--color-primary)',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease'
-                  }} />
-                  <i className="fa-brands fa-linkedin-in" style={{
-                    position: 'relative',
-                    zIndex: 1,
-                    transition: 'all 0.3s ease'
-                  }} />
+                <a href="https://www.linkedin.com/in/shopnilm" target="_blank" rel="noopener noreferrer" className="social-icon sidebar-social-link">
+                  <div className="social-icon-glow sidebar-glow" />
+                  <i className="fa-brands fa-linkedin-in sidebar-icon" />
                 </a>
-                <a href="https://www.facebook.com/designarium.net" target="_blank" rel="noopener noreferrer" className="social-icon" style={{
-                  width: '40px',
-                  height: '40px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(255, 255, 255, 0.05)',
-                  color: 'var(--color-heading)',
-                  transition: 'all 0.3s ease',
-                  textDecoration: 'none',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  <div className="social-icon-glow" style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    background: 'var(--color-primary)',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease'
-                  }} />
-                  <i className="fa-brands fa-facebook" style={{
-                    position: 'relative',
-                    zIndex: 1,
-                    transition: 'all 0.3s ease'
-                  }} />
+                <a href="https://www.facebook.com/designarium.net" target="_blank" rel="noopener noreferrer" className="social-icon sidebar-social-link">
+                  <div className="social-icon-glow sidebar-glow" />
+                  <i className="fa-brands fa-facebook sidebar-icon" />
                 </a>
               </div>
             </div>

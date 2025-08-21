@@ -8,19 +8,19 @@ import { slugify } from "@/utils/slugify";
 
 export const portfolioItems = [
   {
-    id: 3,
-    animationOrder: 3,
+    id: 5,
+    animationOrder: 5,
     imageSrc: "/assets/images/latest-portfolio/awaj.png",
     width: 1920,
     height: 1572,
     title: "Awaj Foundation",
-    description: "A case of an impactful website and how it made a difference to many lives.",
+    description: "The most satisfying aspect of the Awaj Foundation project was contributing to the rights of underprivileged workers. This website was presented to them as an educational tool to create awareness, as well as to raise funds and increase the minimum pay.",
     author: "Shopnil Mahamud",
     date: "6 June, 2025",
     tags: ["Figma", "UI/UX", "Non-profit"],
     categories: ["UI/UX Design", "Non-profit", "Web Application"],
-    showInAll: true,
-    allOrder: 3,
+    showInAll: false,
+    allOrder: 5,
     details: [
       {
         label: "Role: ",
@@ -118,19 +118,19 @@ export const portfolioItems = [
     ]
   },
   {
-    id: 1,
-    animationOrder: 1,
+    id: 3,
+    animationOrder: 3,
     imageSrc: "/assets/images/latest-portfolio/ax_cp.png",
     width: 1939,
     height: 1572,
     title: "Augmedix Inc.",
-    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system - the burden of documentation.",
+    description: "At Augmedix, I co-designed real-time medical documentation tools, reducing physicians’ administrative work by 2–3 hours daily, boosting productivity, and supporting scalable healthcare delivery through innovative front-end design.",
     author: "Shopnil Mahamud",
     date: "6 June, 2025",
     tags: ["Figma", "UI/UX", "Healthcare"],
     categories: ["UI/UX Design", "Healthcare", "Web Application"],
     showInAll: true,
-    allOrder: 1,
+    allOrder: 3,
     details: [
       {
         label: "Role: ",
@@ -267,7 +267,7 @@ export const portfolioItems = [
     width: 1939,
     height: 1572,
     title: "Dynacare LIS",
-    description: "A modern portal design for the ECCF organization, featuring appointment scheduling, patient management, and administrative tools. Includes a responsive design optimized for all devices.",
+    description: "Led UX design for Dynacare’s lab application, digitizing manual workflows, cutting paper use, and reducing procedural turnaround times—streamlining documentation and improving efficiency across clinical testing environments.",
     author: "Shopnil Mahamud",
     date: "6 June, 2025",
     tags: ["Figma", "UI/UX", "Healthcare"],
@@ -475,13 +475,96 @@ export const portfolioItems = [
     ]
   },
   {
+    id: 1,
+    animationOrder: 1,
+    imageSrc: "/assets/images/latest-portfolio/BMO AI.jpg",
+    width: 1939,
+    height: 1572,
+    title: "Al-Powered Fraud Detection Tool",
+    description: "Designed AI-powered fraud detection tools at BMO, reducing investigation time by 40% and preventing $2.5M+ in potential losses, while simplifying complex workflows for banking and insurance teams.",
+    author: "Shopnil Mahamud",
+    date: "6 June, 2025",
+    tags: ["Figma", "UI/UX", "Fintech"],
+    categories: ["UI/UX Design", "Fintech", "Web Application"],
+    showInAll: true,
+    allOrder: 1,
+    details: [
+      {
+        label: "Role: ",
+        value: ["UX Research", "Product Design", "Interaction Design", "User Experience Design"]
+      },
+      {
+        label: "Duration: ",
+        value: "1 Year"
+      },
+      {
+        label: "Company: ",
+        value: "Bank of Montreal"
+      }
+    ],
+    liveUrl: "https://www.bmo.com",
+    summary: "",
+    sections: [
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0001.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0002.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0003.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0004.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0005.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0006.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0007.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0008.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0009.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/BMO Fraud Detection_page-0010.jpg",
+        imagePosition: "before"
+      }
+    ]
+  },
+  {
     id: 4,
     animationOrder: 4,
     imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
     width: 1939,
     height: 1572,
-    title: "Bank of Montreal",
-    description: "A modern portal design for the ECCF organization, featuring appointment scheduling, patient management, and administrative tools. Includes a responsive design optimized for all devices.",
+    title: "Financial Advisor Tool",
+    description: "To transform the digital platform used by financial advisors and institutional clients to manage, invest, and report on retirement mutual funds, aiming to improve advisor efficiency, enhance client service capabilities.",
     author: "Shopnil Mahamud",
     date: "6 June, 2025",
     tags: ["Figma", "UI/UX", "Fintech"],
@@ -889,19 +972,19 @@ export const portfolioItems = [
     ],
   },
   {
-    id: 6,
-    animationOrder: 6,
+    id: 7,
+    animationOrder: 7,
         imageSrc: "/assets/images/latest-portfolio/finicky_cover.png",
         width: 1939,
         height: 1572,
         title: "Finicky Foodie",
-        description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system - the burden of documentation.",
+        description: "A food recipe app, Finicky Foodie, is dedicated to the urban working professionals who live a busy life and are short of time for preparing their meals. They often need to cook a meal to have both lunch and dinner because they wouldn't have time to cook twice a day.",
         author: "Shopnil Mahamud",
         date: "6 June, 2025",
         tags: ["Figma", "UI/UX", "Mobile App"],
         categories: ["UI/UX Design", "Mobile App", "Web Application"],
         showInAll: false,
-        allOrder: 6,
+        allOrder: 7,
         details: [
           {
             label: "Role: ",
@@ -989,8 +1072,8 @@ export const portfolioItems = [
     ]
   },
     {
-    id: 5,
-    animationOrder: 5,
+    id: 6,
+    animationOrder: 6,
         imageSrc: "/assets/images/latest-portfolio/eccf-portal.png",
         width: 1939,
         height: 1572,
@@ -1001,7 +1084,7 @@ export const portfolioItems = [
         tags: ["Figma", "UI/UX", "Healthcare"],
         categories: ["UI/UX Design", "Healthcare", "Web Application"],
         showInAll: false,
-        allOrder: 5,
+        allOrder: 6,
         details: [
           {
             label: "Role: ",

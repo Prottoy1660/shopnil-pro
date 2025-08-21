@@ -2,15 +2,15 @@ import { slugify } from "@/utils/slugify";
 
 // Case Studies - Using existing portfolio items that have detailed case studies
 export const caseStudies = [
-  {
+    {
     id: 1,
-    imageSrc: "/assets/images/latest-portfolio/ax_cp.png",
+    imageSrc: "/assets/images/latest-portfolio/BMO AI.jpg",
     width: 1939,
     height: 1572,
-    title: "Augmedix Inc.",
-    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
-    tags: ["Figma", "UI/UX", "Healthcare"],
-    slug: "augmedix-inc"
+    title: "Al-Powered Fraud Detection Tool",
+    description: "Designed AI-powered fraud detection tools at BMO, reducing investigation time by 40% and preventing $2.5M+ in potential losses, while simplifying complex workflows for banking and insurance teams.",
+    tags: ["Figma", "UI/UX", "Fintech"],
+    slug: "al-powered-fraud-detection-tool-bmo"
   },
   {
     id: 2,
@@ -18,39 +18,39 @@ export const caseStudies = [
     width: 1939,
     height: 1572,
     title: "Dynacare LIS",
-    description: "A modern portal design for the ECCF organization, featuring appointment scheduling and patient management.",
+    description: "Led UX design for Dynacare’s lab application, digitizing manual workflows, cutting paper use, and reducing procedural turnaround times—streamlining documentation and improving efficiency across clinical testing environments.",
     tags: ["Figma", "UI/UX", "Healthcare"],
     slug: "dynacare-lis"
   },
   {
     id: 3,
-    imageSrc: "/assets/images/latest-portfolio/awaj.png",
-    width: 1920,
+    imageSrc: "/assets/images/latest-portfolio/ax_cp.png",
+    width: 1939,
     height: 1572,
-    title: "Awaj Foundation",
-    description: "A case of an impactful website and how it made a difference to many lives.",
-    tags: ["Figma", "UI/UX", "Non-profit"],
-    slug: "awaj-foundation"
+    title: "Augmedix Inc.",
+    description: "At Augmedix, I co-designed real-time medical documentation tools, reducing physicians’ administrative work by 2–3 hours daily, boosting productivity, and supporting scalable healthcare delivery through innovative front-end design.",
+    tags: ["Figma", "UI/UX", "Healthcare"],
+    slug: "augmedix-inc"
   },
   {
     id: 4,
     imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
     width: 1939,
     height: 1572,
-    title: "Bank of Montreal",
-    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
+    title: "Financial Advisor Tool",
+    description: "To transform the digital platform used by financial advisors and institutional clients to manage, invest, and report on retirement mutual funds, aiming to improve advisor efficiency, enhance client service capabilities.",
     tags: ["Figma", "UI/UX", "Fintech"],
     slug: "bank-of-montreal"
   },
   {
     id: 5,
-    imageSrc: "/assets/images/latest-portfolio/eccf-portal.png",
-    width: 1939,
+    imageSrc: "/assets/images/latest-portfolio/awaj.png",
+    width: 1920,
     height: 1572,
-    title: "Dynacare ECCF Portal",
-    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
-    tags: ["Figma", "UI/UX", "Healthcare"],
-    slug: "eccf-portal"
+    title: "Awaj Foundation",
+    description: "The most satisfying aspect of the Awaj Foundation project was contributing to the rights of underprivileged workers. This website was presented to them as an educational tool to create awareness, as well as to raise funds and increase the minimum pay.",
+    tags: ["Figma", "UI/UX", "Non-profit"],
+    slug: "awaj-foundation"
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ export const caseStudies = [
     width: 1939,
     height: 1572,
     title: "Finicky Foodie",
-    description: "A cutting-edge medical documentation tool that resolved the largest pain-point of the US healthcare system.",
+    description: "A food recipe app, Finicky Foodie, is dedicated to the urban working professionals who live a busy life and are short of time for preparing their meals. They often need to cook a meal to have both lunch and dinner because they wouldn't have time to cook twice a day.",
     tags: ["Figma", "UI/UX", "Mobile App"],
     slug: "finicky-foodie"
   }

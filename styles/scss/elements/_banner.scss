@@ -981,12 +981,13 @@
               font-size: 26px;
               line-height: 36px;
               font-weight: 700;
-              text-transform: capitalize;
               margin-bottom: 4px;
+              display: flex;
+              align-items: baseline;
 
               @media (min-width: 576px) {
                 font-size: 48px;
-                line-height: 60px;
+                line-height: 48px;
               }
             }
 
@@ -1043,7 +1044,7 @@
           color: var(--color-gray);
           text-align: right;
           font-family: var(--font-secondary);
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 400;
           line-height: 30px;
           margin-bottom: 8px;
@@ -1151,7 +1152,7 @@
   .find-me-on-title {
     color: var(--color-heading);
     font-family: var(--font-secondary);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 30px;
     margin-bottom: 10px;

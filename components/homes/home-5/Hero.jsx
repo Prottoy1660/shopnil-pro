@@ -63,14 +63,17 @@ export default function Hero() {
               <div className="banner-right-content">
                 <div className="banner-contact-info">
                   <div className="contact-info tmp-scroll-trigger tmp-fade-in animation-order-1 mb-4">
-                    <h4 className="title">Hello :</h4>
+                    <h4 className="title" style={{textTransform: 'none'}}>Worked with</h4>
                     <p className="para">
-                    I love taking ownership & responsibilities to learn and grow in a challenging environment. I specialize in user-centered design, smooth and joyful experience by solving real problems to delight the users.
+                      At BMO, I spearheaded UX for an AI fraud detection platform that slashed investigation time by 40% and prevented millions in losses.
+                      <br /><br />
+                      At Dynacare, I reduced test result delivery time by 2 days with AI Tool.
+                      <br /><br />
+                      At Augmedix, I contributed to documentation tools that empower clinicians with up to 3 hours of daily time savings, 20% productivity boost, and 40% higher work-life satisfaction.
                     </p>
                   </div>
                   <div className="contact-info tmp-scroll-trigger tmp-fade-in animation-order-2">
-                    <h4 className="title">Contact :</h4>
-                    <p className="para">Fort York Blvd, Toronto</p>
+                    <h4 className="title" style={{textTransform: 'none'}}>I'm a Torontonian</h4>
                     <p className="para">contact@shopnilmahamud.com</p>
                   </div>
                 </div>

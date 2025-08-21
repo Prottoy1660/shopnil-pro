@@ -62,7 +62,7 @@ export default function Contact({
             <div className="col-lg-5">
               <div className="contact-inner">
                 <div className="section-head section-head-one-side text-align-left tmp-scroll-trigger tmp-fade-in animation-order-1">
-                  <span className="title-left">Get Ready To Create Great</span>
+                  <span className="title-left">Let's Create A Story Together</span>
                 </div>
                 <ul className="ft-link v2">
                   <li className="tmp-scroll-trigger tmp-fade-in animation-order-1 tmp-link-animation">

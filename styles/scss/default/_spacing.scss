@@ -29,12 +29,16 @@
 }
 
 .tmp-section-gap {
-    padding: 120px 0;
+    padding: 20px 0; // Default for large screens
+    
+    // Medium screens (768px - 991px)
     @media #{variables.$md-layout} {
         padding: 80px 0;
     }
+    
+    // Mobile screens (max-width: 767px)
     @media #{variables.$sm-layout} {
-        padding: 60px 0;
+        padding: 20px 0 !important;
     }
 }
 
