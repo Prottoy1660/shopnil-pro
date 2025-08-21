@@ -6,7 +6,7 @@ import "@/styles/skills.css";
 // Icon mapping for skills with their brand colors and gradient combinations
 const skillIcons = {
   "Framer": {
-    src: "/assets/images/skill/Framer.png",
+    src: "/assets/images/skill/framer.png",
     color: "#e9e9e9",
     colorRgb: "233, 233, 233",
     gradient: "linear-gradient(135deg,#e9e9e9 0%,rgb(227, 238, 236) 100%)"
