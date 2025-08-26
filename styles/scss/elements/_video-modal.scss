@@ -1,0 +1,435 @@
+@use "../default/variables";
+
+// Video Modal Styles
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.video-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s ease-out;
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  &:focus {
+    outline: 2px solid #ff006a;
+    outline-offset: 2px;
+  }
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  &:focus {
+    outline: 2px solid #ff0062;
+    outline-offset: 2px;
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  // Desktop and larger screens
+  @media #{variables.$laptop-device} {
+    top: 18px;
+    right: 18px;
+    width: 48px;
+    height: 48px;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  @media #{variables.$extra-device} {
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+.video-ui-toggle {
+  position: absolute;
+  top: 15px;
+  right: 70px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  &:focus {
+    outline: 2px solid #ff006a;
+    outline-offset: 2px;
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  // Desktop and larger screens
+  @media #{variables.$laptop-device} {
+    top: 18px;
+    right: 78px;
+    width: 44px;
+    height: 44px;
+    
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  
+  @media #{variables.$extra-device} {
+    top: 20px;
+    right: 85px;
+    width: 48px;
+    height: 48px;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.video-modal-content {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9 aspect ratio
+  background: #000;
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  
+  p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.8;
+  }
+}
+
+// YouTube UI Overlays
+.youtube-ui-overlays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity 0.3s ease;
+  
+  &.youtube-ui-hidden {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  &.youtube-ui-visible {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.youtube-title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, transparent 100%);
+  z-index: 6;
+}
+
+.youtube-channel-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, transparent 100%);
+  z-index: 6;
+}
+
+.youtube-controls-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0);
+  z-index: 6;
+}
+
+// Responsive adjustments using project variables
+@media #{variables.$md-layout} {
+  .video-modal-overlay {
+    padding: 15px;
+  }
+  
+  .video-modal-container {
+    max-height: 95vh;
+    border-radius: 10px;
+  }
+  
+  .video-modal-close {
+    top: 12px;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  .video-ui-toggle {
+    top: 12px;
+    right: 65px;
+    width: 38px;
+    height: 38px;
+    
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+@media #{variables.$sm-layout} {
+  .video-modal-overlay {
+    padding: 10px;
+  }
+  
+  .video-modal-container {
+    max-height: 95vh;
+    border-radius: 8px;
+  }
+  
+  .video-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  .video-ui-toggle {
+    top: 10px;
+    right: 60px;
+    width: 36px;
+    height: 36px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@media #{variables.$large-mobile} {
+  .video-modal-overlay {
+    padding: 8px;
+  }
+  
+  .video-modal-container {
+    border-radius: 6px;
+  }
+  
+  .video-modal-close {
+    top: 8px;
+    right: 8px;
+    width: 38px;
+    height: 38px;
+    
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+  
+  .video-ui-toggle {
+    top: 8px;
+    right: 55px;
+    width: 34px;
+    height: 34px;
+    
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+@media #{variables.$small-mobile} {
+  .video-modal-overlay {
+    padding: 5px;
+  }
+  
+  .video-modal-container {
+    border-radius: 4px;
+  }
+  
+  .video-modal-close {
+    top: 6px;
+    right: 6px;
+    width: 36px;
+    height: 36px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  .video-ui-toggle {
+    top: 6px;
+    right: 50px;
+    width: 32px;
+    height: 32px;
+    
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .video-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .video-modal-overlay,
+  .video-modal-container,
+  .video-modal-close {
+    animation: none;
+    transition: none;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .video-modal-close {
+    background: #000;
+    border: 2px solid #fff;
+    
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
+}

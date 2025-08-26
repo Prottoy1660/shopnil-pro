@@ -1,10 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import ProjectsShowcase from "./ProjectsShowcase";
 import FigmaViewer from "./FigmaViewer";
 import ProjectGallery from "./ProjectGallery";
+import VideoModal from "../common/VideoModal";
 
 export default function ProjectDetails({ portfolioItem }) {
+  // State for video modal
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState("");
+
   // Use the figmaUrl directly from the portfolio item
   const figmaUrl = portfolioItem.figmaUrl;
 
@@ -16,9 +23,20 @@ export default function ProjectDetails({ portfolioItem }) {
     }
   ];
 
+  // Video modal handlers
+  const openVideoModal = (videoUrl) => {
+    setCurrentVideoUrl(videoUrl);
+    setIsVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false);
+    setCurrentVideoUrl("");
+  };
+
   // Render a section with optional image
   const renderSection = (section) => {
-    const { title, content, image, imagePosition, images, titleFontSize, titleFontWeight, contentFontSize, contentLineHeight } = section;
+    const { title, content, image, imagePosition, images, videoUrl, videoPosition, titleFontSize, titleFontWeight, contentFontSize, contentLineHeight } = section;
     
     // Function to format text with bold and highlight
     const formatText = (text) => {
@@ -41,6 +59,32 @@ export default function ProjectDetails({ portfolioItem }) {
         ))}
       </div>
     );
+
+    const renderVideo = (videoUrl) => {
+      // Extract YouTube video ID for thumbnail
+      const getYouTubeVideoId = (url) => {
+        if (!url) return null;
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
+      };
+
+      const videoId = getYouTubeVideoId(videoUrl);
+      const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : null;
+
+      return (
+        <div className="video-thumbnail" onClick={() => openVideoModal(videoUrl)}>
+          {thumbnailUrl && (
+            <img 
+              src={thumbnailUrl} 
+              alt="Video thumbnail" 
+              className="img-fluid" 
+            />
+          )}
+          <div className="play-button"></div>
+        </div>
+      );
+    };
 
     // Determine title class based on content
     const titleClass = title && (
@@ -85,6 +129,7 @@ export default function ProjectDetails({ portfolioItem }) {
     return (
       <div className="section-block">
         {title && <h3 className={titleClasses} style={titleStyle}>{title}</h3>}
+        {videoPosition === 'before' && videoUrl && renderVideo(videoUrl)}
         {imagePosition === 'before' && (images ? renderImages(images) : image && (
           <div className="section-image">
             <img src={image} alt={`${title} illustration`} className="img-fluid" />
@@ -151,6 +196,7 @@ export default function ProjectDetails({ portfolioItem }) {
             </ul>
           </div>
         ) : null}
+        {videoPosition === 'after' && videoUrl && renderVideo(videoUrl)}
         {imagePosition === 'after' && (images ? renderImages(images) : image && (
           <div className="section-image">
             <img src={image} alt={`${title} illustration`} className="img-fluid" />
@@ -272,6 +318,13 @@ export default function ProjectDetails({ portfolioItem }) {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <VideoModal 
+        isOpen={isVideoModalOpen} 
+        onClose={closeVideoModal} 
+        videoUrl={currentVideoUrl} 
+      />
     </div>
   );
 }

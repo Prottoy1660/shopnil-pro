@@ -150,6 +150,11 @@ export const portfolioItems = [
     sections: [
       {
         title: "",
+        videoUrl: "https://www.youtube.com/watch?v=z3HQ-92xE64",
+        videoPosition: "before"
+      },
+      {
+        title: "",
         image: "/assets/images/latest-portfolio/Augmedix/Slide1.png",
         imagePosition: "before"
       },
@@ -182,6 +187,11 @@ export const portfolioItems = [
         title: "",
         image: "/assets/images/latest-portfolio/Augmedix/Slide7.png",
         imagePosition: "before"
+      },
+      {
+        title: "",
+        videoUrl: "https://youtu.be/6IYyAAy2yPY",
+        videoPosition: "before"
       },
       {
         title: "",

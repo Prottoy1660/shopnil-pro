@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollTop from "../common/ScrollTop";
+import ShowreelButton from "../common/ShowreelButton";
 import Sidebar from "../headers/Sidebar";
 import MobileMenu from "../headers/MobileMenu";
 import MobileMenuOnepage from "../headers/MobileMenuOnepage";
@@ -198,6 +199,7 @@ export default function Footer2({
         </div>
       </footer>
       <ScrollTop />
+      <ShowreelButton />
       <Sidebar />
       <MobileMenu />
       <MobileMenuOnepage />
