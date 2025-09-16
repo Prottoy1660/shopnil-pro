@@ -168,7 +168,7 @@ export default function WorksSection() {
       </section>
 
       {/* Fun Projects Section */}
-      <section className="fun-projects-section tmp-section-gap" style={{ display: 'none' }}>
+      <section className="fun-projects-section tmp-section-gap">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

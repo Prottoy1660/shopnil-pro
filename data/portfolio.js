@@ -1353,11 +1353,6 @@ export const portfolioItems = [
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0020.jpg",
-        imagePosition: "before"
-      },
-      {
-        title: "",
         image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0021.jpg",
         imagePosition: "before"
       },
