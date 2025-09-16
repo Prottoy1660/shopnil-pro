@@ -8,8 +8,8 @@ import { slugify } from "@/utils/slugify";
 
 export const portfolioItems = [
   {
-    id: 5,
-    animationOrder: 5,
+    id: 6,
+    animationOrder: 6,
     imageSrc: "/assets/images/latest-portfolio/awaj.png",
     width: 1920,
     height: 1572,
@@ -20,7 +20,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Non-profit"],
     categories: ["UI/UX Design", "Non-profit", "Web Application"],
     showInAll: false,
-    allOrder: 5,
+    allOrder: 6,
     details: [
       {
         label: "Role: ",
@@ -485,8 +485,8 @@ export const portfolioItems = [
     ]
   },
   {
-    id: 1,
-    animationOrder: 1,
+    id: 4,
+    animationOrder: 4,
     imageSrc: "/assets/images/latest-portfolio/BMO AI.jpg",
     width: 1939,
     height: 1572,
@@ -497,7 +497,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Fintech"],
     categories: ["UI/UX Design", "Fintech", "Web Application"],
     showInAll: true,
-    allOrder: 1,
+    allOrder: 4,
     details: [
       {
         label: "Role: ",
@@ -568,8 +568,8 @@ export const portfolioItems = [
     ]
   },
   {
-    id: 4,
-    animationOrder: 4,
+    id: 7,
+    animationOrder: 7,
     imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
     width: 1939,
     height: 1572,
@@ -577,10 +577,10 @@ export const portfolioItems = [
     description: "To transform the digital platform used by financial advisors and institutional clients to manage, invest, and report on retirement mutual funds, aiming to improve advisor efficiency, enhance client service capabilities.",
     author: "Shopnil Mahamud",
     date: "6 June, 2025",
-    tags: ["Figma", "UI/UX", "Fintech"],
-    categories: ["UI/UX Design", "Fintech", "Web Application"],
-    showInAll: true,
-    allOrder: 4,
+    tags: ["Figma", "UI/UX", "Hide"],
+    categories: ["UI/UX Design", "Hide", "Web Application"],
+    showInAll: false,
+    allOrder: 7,
     details: [
       {
         label: "Role: ",
@@ -982,8 +982,8 @@ export const portfolioItems = [
     ],
   },
   {
-    id: 7,
-    animationOrder: 7,
+    id: 5,
+    animationOrder: 5,
         imageSrc: "/assets/images/latest-portfolio/finicky_cover.png",
         width: 1939,
         height: 1572,
@@ -994,7 +994,7 @@ export const portfolioItems = [
         tags: ["Figma", "UI/UX", "Mobile App"],
         categories: ["UI/UX Design", "Mobile App", "Web Application"],
         showInAll: false,
-        allOrder: 7,
+        allOrder: 5,
         details: [
           {
             label: "Role: ",
@@ -1082,8 +1082,8 @@ export const portfolioItems = [
     ]
   },
     {
-    id: 6,
-    animationOrder: 6,
+    id: 8,
+    animationOrder: 8,
         imageSrc: "/assets/images/latest-portfolio/eccf-portal.png",
         width: 1939,
         height: 1572,
@@ -1091,10 +1091,10 @@ export const portfolioItems = [
         description: "A modern portal design for the ECCF organization, featuring appointment scheduling, patient management, and administrative tools. Includes a responsive design optimized for all devices.",
         author: "Shopnil Mahamud",
         date: "6 June, 2025",
-        tags: ["Figma", "UI/UX", "Healthcare"],
-        categories: ["UI/UX Design", "Healthcare", "Web Application"],
+        tags: ["Figma", "UI/UX", "Hide"],
+        categories: ["UI/UX Design", "Hide", "Web Application"],
         showInAll: false,
-        allOrder: 6,
+        allOrder: 8,
         details: [
           {
             label: "Role: ",
@@ -1218,6 +1218,224 @@ export const portfolioItems = [
             image: "/assets/images/latest-portfolio/ECCF/15.png",
             imagePosition: "before"
           }
+    ]
+  },
+    {
+    id: 1,
+    animationOrder: 1,
+    imageSrc: "/assets/images/latest-portfolio/Expense insight.png",
+    width: 1939,
+    height: 1572,
+    title: "Expense Insight",
+    description: "A cutting-edge expense management tool that helps users track and manage their expenses efficiently.",
+    author: "Shopnil Mahamud",
+    date: "6 June, 2025",
+    tags: ["Figma", "UI/UX", "Fintech"],
+    categories: ["UI/UX Design", "Fintech", "Web Application"],
+    showInAll: true,
+    allOrder: 1,
+    details: [
+      {
+        label: "Role: ",
+        value: ["UX Research", "Product Design", "Interaction Design", "User Experience Design"]
+      },
+      {
+        label: "Duration: ",
+        value: "5 years"
+      },
+      {
+        label: "Company: ",
+        value: "Expense Insight"
+      }
+    ],
+    figmaUrl: "",
+    summary: "",
+    sections: [
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0001.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0002.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0003.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0004.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0005.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0006.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0007.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0008.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0009.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0010.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0011.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0012.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0013.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0014.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0015.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0016.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0017.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0018.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0019.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0020.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0020.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0021.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0022.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0023.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0024.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0025.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0026.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0027.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0028.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0029.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0030.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0031.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0032.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0033.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0034.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0035.jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Expense Insight App_pages-to-jpg-0036.jpg",
+        imagePosition: "before"
+      }
     ]
   },
 ].map((elm) => {

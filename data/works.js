@@ -2,16 +2,16 @@ import { slugify } from "@/utils/slugify";
 
 // Case Studies - Using existing portfolio items that have detailed case studies
 export const caseStudies = [
-    {
+  {
     id: 1,
-    imageSrc: "/assets/images/latest-portfolio/BMO AI.jpg",
+    imageSrc: "/assets/images/latest-portfolio/Expense insight.png",
     width: 1939,
     height: 1572,
-    title: "Al-Powered Fraud Detection Tool",
-    description: "Designed AI-powered fraud detection tools at BMO, reducing investigation time by 40% and preventing $2.5M+ in potential losses, while simplifying complex workflows for banking and insurance teams.",
-    tags: ["Figma", "UI/UX", "Fintech"],
-    slug: "al-powered-fraud-detection-tool-bmo"
-  },
+    title: "Expense insight",
+    description: "A cutting-edge expense management tool that helps users track and manage their expenses efficiently.",
+    tags: ["Figma", "UI/UX", "Mobile App"],
+    slug: "expense-insight"
+  },  
   {
     id: 2,
     imageSrc: "/assets/images/latest-portfolio/dynacare.png",
@@ -34,26 +34,16 @@ export const caseStudies = [
   },
   {
     id: 4,
-    imageSrc: "/assets/images/latest-portfolio/Bank of Montreal.png",
+    imageSrc: "/assets/images/latest-portfolio/BMO AI.jpg",
     width: 1939,
     height: 1572,
-    title: "Financial Advisor Tool",
-    description: "To transform the digital platform used by financial advisors and institutional clients to manage, invest, and report on retirement mutual funds, aiming to improve advisor efficiency, enhance client service capabilities.",
+    title: "Al-Powered Fraud Detection Tool",
+    description: "Designed AI-powered fraud detection tools at BMO, reducing investigation time by 40% and preventing $2.5M+ in potential losses, while simplifying complex workflows for banking and insurance teams.",
     tags: ["Figma", "UI/UX", "Fintech"],
-    slug: "bank-of-montreal"
+    slug: "al-powered-fraud-detection-tool-bmo"
   },
-  {
+    {
     id: 5,
-    imageSrc: "/assets/images/latest-portfolio/awaj.png",
-    width: 1920,
-    height: 1572,
-    title: "Awaj Foundation",
-    description: "The most satisfying aspect of the Awaj Foundation project was contributing to the rights of underprivileged workers. This website was presented to them as an educational tool to create awareness, as well as to raise funds and increase the minimum pay.",
-    tags: ["Figma", "UI/UX", "Non-profit"],
-    slug: "awaj-foundation"
-  },
-  {
-    id: 6,
     imageSrc: "/assets/images/latest-portfolio/finicky_cover.png",
     width: 1939,
     height: 1572,
@@ -61,7 +51,18 @@ export const caseStudies = [
     description: "A food recipe app, Finicky Foodie, is dedicated to the urban working professionals who live a busy life and are short of time for preparing their meals. They often need to cook a meal to have both lunch and dinner because they wouldn't have time to cook twice a day.",
     tags: ["Figma", "UI/UX", "Mobile App"],
     slug: "finicky-foodie"
+  },
+  {
+    id: 6,
+    imageSrc: "/assets/images/latest-portfolio/awaj.png",
+    width: 1920,
+    height: 1572,
+    title: "Awaj Foundation",
+    description: "The most satisfying aspect of the Awaj Foundation project was contributing to the rights of underprivileged workers. This website was presented to them as an educational tool to create awareness, as well as to raise funds and increase the minimum pay.",
+    tags: ["Figma", "UI/UX", "Non-profit"],
+    slug: "awaj-foundation"
   }
+
 ].map((elm) => {
   return {
     ...elm,

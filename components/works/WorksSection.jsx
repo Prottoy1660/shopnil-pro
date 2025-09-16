@@ -95,7 +95,7 @@ export default function WorksSection() {
       </section>
 
       {/* Website Projects Section */}
-      <section className="website-projects-section tmp-section-gap">
+      <section className="website-projects-section tmp-section-gap" style={{ display: 'none' }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -168,7 +168,7 @@ export default function WorksSection() {
       </section>
 
       {/* Fun Projects Section */}
-      <section className="fun-projects-section tmp-section-gap">
+      <section className="fun-projects-section tmp-section-gap" style={{ display: 'none' }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
