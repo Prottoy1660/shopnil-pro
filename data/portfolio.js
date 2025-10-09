@@ -299,7 +299,6 @@ export const portfolioItems = [
       }
     ],
     figmaUrl: "https://embed.figma.com/design/fPGy7ZU0xdfaMRfhsoYvcr/CytoConnect?node-id=0-1&embed-host=share",
-    liveUrl: "https://www.dynacare.ca",
     summary: "",
     sections: [
       {
