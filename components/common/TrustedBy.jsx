@@ -40,7 +40,7 @@ const TrustedBy = () => {
           <div className="col-lg-8 text-center">
             <div className="trusted-by-header mb-5">
               <h2 className="trusted-by-title tmp-scroll-trigger slide_in animation-order-0">
-                Trusted by industry leaders
+                Design Communities
               </h2>
               <p className="trusted-by-subtitle tmp-scroll-trigger slide_in animation-order-1">
                 Join thousands of companies that trust our solutions to drive their success
