@@ -1,0 +1,394 @@
+// Trusted By Section Styles
+.trusted-by-section {
+  padding: 120px 0;
+  background: var(--color-secondary);
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 991px) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+
+  // Enhanced background with dynamic gradient
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(var(--color-primary-rgb), 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(var(--color-secondary-rgb), 0.15) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.08) 100%);
+    pointer-events: none;
+    z-index: 1;
+    animation: gradientShift 8s ease-in-out infinite;
+  }
+
+  // Animated particles background
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, rgba(var(--color-primary-rgb), 0.3), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(var(--color-secondary-rgb), 0.3), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(var(--color-primary-rgb), 0.3), transparent);
+    background-repeat: repeat;
+    background-size: 150px 100px;
+    animation: float 20s linear infinite;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.trusted-by-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 3;
+
+  @media (max-width: 767px) {
+    margin-bottom: 50px;
+  }
+}
+
+.trusted-by-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  animation: gradientText 3s ease-in-out infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+    animation: underlineExpand 0.8s ease-out forwards;
+    box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.5);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
+}
+
+.trusted-by-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  opacity: 0.8;
+  background: linear-gradient(135deg, var(--color-text-secondary), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.trusted-by-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.trusted-by-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+
+  &:hover {
+    svg {
+      transform: scale(1.1);
+      filter: brightness(1.2) contrast(1.3);
+    }
+  }
+
+  svg {
+    width: 120px;
+    height: 60px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.9) contrast(1.2);
+  }
+  
+  &.tmp-scroll-trigger:not(.tmp-scroll-trigger--offscreen) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    svg {
+      width: 100px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    svg {
+      width: 80px;
+      height: 40px;
+    }
+  }
+}
+
+.company-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+
+  @media (max-width: 767px) {
+    // Responsive adjustments only
+  }
+
+  &:hover {
+    .company-logo {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    .company-name {
+      color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.company-logo {
+  width: 120px;
+  height: 60px;
+  margin-bottom: 12px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(0.9);
+  opacity: 0.9;
+  object-fit: contain;
+
+  @media (max-width: 767px) {
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 480px) {
+    width: 80px;
+    height: 40px;
+  }
+
+  // Ensure SVG fills are properly handled
+  path {
+    transition: all 0.3s ease;
+  }
+}
+
+.company-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  opacity: 0.7;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  @media (max-width: 767px) {
+    font-size: 0.8rem;
+  }
+}
+
+// Light theme adjustments
+.tmp-white-version .trusted-by-section {
+  &::before {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(var(--color-primary-rgb), 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(var(--color-secondary-rgb), 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%);
+  }
+
+  &::after {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, rgba(var(--color-primary-rgb), 0.2), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(var(--color-secondary-rgb), 0.2), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(0, 0, 0, 0.3), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(var(--color-primary-rgb), 0.2), transparent);
+  }
+
+  .trusted-by-title {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .trusted-by-item {
+    background: 
+      linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.05) 0%, rgba(var(--color-secondary-rgb), 0.03) 100%),
+      rgba(255, 255, 255, 0.8);
+    border-image: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.2), rgba(var(--color-secondary-rgb), 0.2)) 1;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    &:hover {
+      background: 
+        linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.1) 0%, rgba(var(--color-secondary-rgb), 0.08) 100%),
+        rgba(255, 255, 255, 0.95);
+      box-shadow: 
+        0 25px 50px rgba(var(--color-primary-rgb), 0.15),
+        0 15px 35px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    svg {
+      filter: brightness(0.4) contrast(1.5);
+    }
+  }
+}
+
+// Keyframe animations
+@keyframes gradientShift {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(5px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(-5px) translateY(5px);
+  }
+  75% {
+    transform: translateX(-5px) translateY(-5px);
+  }
+}
+
+@keyframes gradientText {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes underlineExpand {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+// Animation keyframes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Floating animation for subtle movement
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+// Optional floating animation for logos (can be enabled via class)
+.company-logo-wrapper.floating {
+  animation: float 6s ease-in-out infinite;
+  
+  &:nth-child(2n) {
+    animation-delay: -2s;
+  }
+  
+  &:nth-child(3n) {
+    animation-delay: -4s;
+  }
+}
+
+// Responsive grid adjustments
+@media (max-width: 1200px) {
+  .trusted-by-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .trusted-by-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .trusted-by-grid {
+    grid-template-columns: 1fr;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}

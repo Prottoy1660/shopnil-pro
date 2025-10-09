@@ -11,6 +11,7 @@ import Skills from "@/components/common/Skills";
 import Testimonials from "@/components/common/Testimonials";
 import TextAnim from "@/components/common/TextAnim";
 import Certification from "@/components/common/Certification";
+import TrustedBy from "@/components/common/TrustedBy";
 import React from "react";
 
 export const metadata = {
@@ -30,6 +31,7 @@ export default function Home() {
       <Certification />
       <Skills/>
       <Testimonials />
+      <TrustedBy />
       <Contact />
       <Footer2/>
       <Copyright />

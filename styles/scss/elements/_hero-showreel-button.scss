@@ -1,0 +1,295 @@
+@use "../default/variables";
+
+/*===============================
+  Hero Showreel Button
+  ===============================*/
+.hero-showreel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  
+  @media #{variables.$large-mobile} {
+    margin: 2rem 0;
+  }
+}
+
+/* Overlay positioning for button over image */
+.hero-button-overlay {
+  position: absolute;
+  top: 70%; /* Lowered from 60% to 65% */
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  
+  @media #{variables.$md-layout} {
+    top: 63%;
+  }
+  
+  @media #{variables.$large-mobile} {
+    top: 60%;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  
+  @media #{variables.$small-mobile} {
+    top: 57%;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  
+  .hero-showreel-container {
+    margin: 0; /* Remove margin when overlaid */
+  }
+}
+
+.hero-showreel-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+  background: linear-gradient(135deg, 
+    rgba(255, 1, 79, 0.2) 0%, 
+    rgba(249, 55, 162, 0.2) 100%);
+  border: 2px solid rgba(255, 1, 79, 0.5);
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--color-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    0 12px 40px rgba(255, 1, 79, 0.25),
+    0 6px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  
+  // Ensure child elements are above background effects
+  > * {
+    position: relative;
+    z-index: 3;
+  }
+  
+  @media #{variables.$large-mobile} {
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
+  }
+  
+  @media #{variables.$small-mobile} {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: linear-gradient(135deg, 
+      rgba(255, 1, 79, 0.3) 0%, 
+      rgba(249, 55, 162, 0.3) 100%);
+    border-color: rgba(255, 1, 79, 0.7);
+    box-shadow: 
+      0 16px 50px rgba(255, 1, 79, 0.35),
+      0 8px 24px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    color: var(--color-heading);
+    text-decoration: none;
+    
+    .hero-showreel-bg-effect {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    
+    .hero-showreel-particles {
+      .particle {
+        animation-play-state: running;
+      }
+    }
+    
+    .hero-showreel-arrow {
+      transform: translateX(5px);
+    }
+    
+    .hero-showreel-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 
+      0 20px 60px rgba(255, 1, 79, 0.4),
+      0 10px 30px rgba(0, 0, 0, 0.2),
+      0 0 0 3px rgba(255, 1, 79, 0.4);
+  }
+}
+
+.hero-showreel-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+  @media #{variables.$small-mobile} {
+    gap: 0.75rem;
+  }
+}
+
+.hero-showreel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, 
+    rgba(255, 1, 79, 0.2) 0%, 
+    rgba(249, 55, 162, 0.2) 100%);
+  border-radius: 50%;
+  color: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  @media #{variables.$small-mobile} {
+    width: 35px;
+    height: 35px;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.hero-showreel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hero-showreel-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: 1.2;
+  
+  @media #{variables.$small-mobile} {
+    font-size: 1rem;
+  }
+}
+
+.hero-showreel-subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-body);
+  opacity: 0.8;
+  line-height: 1.2;
+  
+  @media #{variables.$small-mobile} {
+    font-size: 0.8rem;
+  }
+}
+
+.hero-showreel-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  @media #{variables.$small-mobile} {
+    font-size: 1rem;
+  }
+}
+
+.hero-showreel-bg-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 1, 79, 0.1) 0%, 
+    rgba(249, 55, 162, 0.1) 100%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.hero-showreel-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+  
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatParticle 3s ease-in-out infinite;
+    animation-play-state: paused;
+    
+    &.particle-1 {
+      top: 20%;
+      left: 15%;
+      animation-delay: 0s;
+    }
+    
+    &.particle-2 {
+      top: 60%;
+      right: 20%;
+      animation-delay: 0.8s;
+    }
+    
+    &.particle-3 {
+      bottom: 25%;
+      left: 25%;
+      animation-delay: 1.6s;
+    }
+    
+    &.particle-4 {
+      top: 40%;
+      right: 15%;
+      animation-delay: 2.4s;
+    }
+  }
+}
+
+// Keyframe animations
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+// Responsive adjustments
+@media #{variables.$md-layout} {
+  .hero-showreel-button {
+    padding: 1.3rem 2.2rem;
+  }
+}
+
+@media #{variables.$large-mobile} {
+  .hero-showreel-container {
+    margin: 2rem 0;
+  }
+  
+  .hero-showreel-text {
+    .hero-showreel-subtitle {
+      display: none; // Hide subtitle on mobile for cleaner look
+    }
+  }
+}
+
+@media #{variables.$small-mobile} {
+  .hero-showreel-container {
+    margin: 1.5rem 0;
+  }
+}

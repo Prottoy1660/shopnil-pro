@@ -150,7 +150,7 @@ export default function Skills({
                             aria-valuemax={100}
                           >
                             <span className="percent-label">
-                              {skill.percent}%
+                              {skill.years} years
                             </span>
                           </div>
                         </div>

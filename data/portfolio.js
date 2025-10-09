@@ -304,182 +304,132 @@ export const portfolioItems = [
     sections: [
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide1.png",
+        image: "/assets/images/latest-portfolio/Newone (1).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide2.png",
+        image: "/assets/images/latest-portfolio/Newone (2).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide3.png",
+        image: "/assets/images/latest-portfolio/Newone (3).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide4.png",
+        image: "/assets/images/latest-portfolio/Newone (4).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide5.png",
+        image: "/assets/images/latest-portfolio/Newone (5).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide6.png",
+        image: "/assets/images/latest-portfolio/Newone (6).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide7.png",
+        image: "/assets/images/latest-portfolio/Newone (7).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide8.png",
+        image: "/assets/images/latest-portfolio/Newone (8).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide9.png",
+        image: "/assets/images/latest-portfolio/Newone (9).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide10.png",
+        image: "/assets/images/latest-portfolio/Newone (10).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide11.png",
+        image: "/assets/images/latest-portfolio/Newone (11).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide12.png",
+        image: "/assets/images/latest-portfolio/Newone (12).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide13.png",
+        image: "/assets/images/latest-portfolio/Newone (13).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide14.png",
+        image: "/assets/images/latest-portfolio/Newone (14).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide15.png",
+        image: "/assets/images/latest-portfolio/Newone (15).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide16.png",
+        image: "/assets/images/latest-portfolio/Newone (16).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide17.png",
+        image: "/assets/images/latest-portfolio/Newone (17).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide18.png",
+        image: "/assets/images/latest-portfolio/Newone (18).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide19.png",
+        image: "/assets/images/latest-portfolio/Newone (19).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide20.png",
+        image: "/assets/images/latest-portfolio/Newone (20).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide21.png",
+        image: "/assets/images/latest-portfolio/Newone (21).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide22.png",
+        image: "/assets/images/latest-portfolio/Newone (22).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide23.png",
+        image: "/assets/images/latest-portfolio/Newone (23).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide24.png",
+        image: "/assets/images/latest-portfolio/Newone (24).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide25.png",
+        image: "/assets/images/latest-portfolio/Newone (25).jpg",
         imagePosition: "before"
       },
       {
         title: "",
-        image: "/assets/images/latest-portfolio/Slide26.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide27.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide28.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide29.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide30.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide31.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide32.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide33.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide34.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide35.png",
-        imagePosition: "before"
-      },
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Slide36.png",
+        image: "/assets/images/latest-portfolio/Newone (26).jpg",
         imagePosition: "before"
       }
     ]

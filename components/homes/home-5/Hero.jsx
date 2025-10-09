@@ -3,6 +3,7 @@ import Image from "next/image";
 import { counters2 } from "@/data/facts";
 import OdometerComponent from "@/components/common/OdometerComponent";
 import TyperComponent from "@/components/common/TyperComponent";
+import HeroShowreelButton from "@/components/common/HeroShowreelButton";
 
 export default function Hero() {
   return (
@@ -11,14 +12,14 @@ export default function Hero() {
         <div className="banner-five-main-wrapper">
           <div className="inner mb-6">
             <h1 className="title tmp-scroll-trigger tmp-fade-in animation-order-1 tmp-title-split">
-              I’m a Sr. Product designer<br />{" "}
+              I'm a Sr. Product designer<br />{" "}
               <span className="header-caption">
                 <span className="cd-headline clip is-full-width">
                   <TyperComponent
                     strings={[
                       "SaaS, B2B, B2C",
                       "Health & Fintech",
-                      "Creative Storyteller"
+                      "Creative Storyteller"
                     ]}
                     className="theme-gradient"
                   />
@@ -28,7 +29,7 @@ export default function Hero() {
           </div>
           <div className="row align-items-center g-4">
             <div className="col-lg-6 order-lg-2">
-              <div className="bg-benner-img-five">
+              <div className="bg-benner-img-five position-relative">
                 <Image
                   className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
                   alt="banner-img-3"
@@ -36,6 +37,10 @@ export default function Hero() {
                   width={4080}
                   height={4080}
                 />
+                {/* Hero Showreel Button - Positioned over the image */}
+                <div className="hero-button-overlay tmp-scroll-trigger tmp-fade-in animation-order-2">
+                  <HeroShowreelButton />
+                </div>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6 order-lg-1">

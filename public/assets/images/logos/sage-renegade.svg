@@ -1,0 +1,29 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A1B9A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="60" height="60" rx="15" fill="url(#sageGradient)"/>
+  
+  <!-- Letter S -->
+  <path d="M20 20 Q30 15 40 20 Q35 25 30 25 Q25 25 20 30 Q30 35 40 30 Q35 35 30 40 Q20 35 20 30" 
+        fill="white" opacity="0.9"/>
+  
+  <!-- Letter R -->
+  <path d="M15 45 L15 50 L18 50 L18 47.5 L20 47.5 L22 50 L25 50 L22.5 47 Q25 46 25 44 Q25 42 22 42 L15 42 L15 45 Z M18 45 L18 44 L21 44 Q22 44 22 45 Q22 46 21 46 L18 46 Z" 
+        fill="white" opacity="0.8"/>
+  
+  <!-- Geometric Pattern -->
+  <polygon points="35,45 40,42 45,45 45,50 40,53 35,50" fill="white" opacity="0.7"/>
+  <polygon points="37,47 40,45.5 43,47 43,50 40,51.5 37,50" fill="#9C27B0"/>
+  
+  <!-- Tech Lines -->
+  <line x1="10" y1="15" x2="50" y2="15" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="10" y1="55" x2="50" y2="55" stroke="white" stroke-width="1" opacity="0.5"/>
+  <circle cx="12" cy="15" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="48" cy="55" r="1.5" fill="white" opacity="0.7"/>
+</svg>
