@@ -291,7 +291,7 @@ export const portfolioItems = [
       },
       {
         label: "Duration: ",
-        value: "6 Month"
+        value: "6 Months"
       },
       {
         label: "Company: ",
@@ -302,11 +302,6 @@ export const portfolioItems = [
     liveUrl: "https://www.dynacare.ca",
     summary: "",
     sections: [
-      {
-        title: "",
-        image: "/assets/images/latest-portfolio/Newone (1).jpg",
-        imagePosition: "before"
-      },
       {
         title: "",
         image: "/assets/images/latest-portfolio/Newone (2).jpg",
@@ -430,6 +425,11 @@ export const portfolioItems = [
       {
         title: "",
         image: "/assets/images/latest-portfolio/Newone (26).jpg",
+        imagePosition: "before"
+      },
+      {
+        title: "",
+        image: "/assets/images/latest-portfolio/Newone (1).jpg",
         imagePosition: "before"
       }
     ]
