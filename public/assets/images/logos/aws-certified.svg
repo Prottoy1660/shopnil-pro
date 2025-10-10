@@ -1,0 +1,8 @@
+<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="60" rx="8" fill="#FF9900"/>
+  <path d="M15 35c0-8 6-15 15-15s15 7 15 15c0 3-1 6-3 8l-12-8z" fill="white"/>
+  <text x="50" y="25" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="white">AWS</text>
+  <text x="50" y="38" font-family="Arial, sans-serif" font-size="8" fill="white">Certified</text>
+  <rect x="85" y="20" width="20" height="20" rx="10" fill="white" opacity="0.2"/>
+  <path d="M90 30l5-5 5 5-5 5z" fill="white"/>
+</svg>

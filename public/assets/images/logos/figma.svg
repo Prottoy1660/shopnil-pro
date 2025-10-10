@@ -1,0 +1,9 @@
+<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="60" rx="8" fill="white" stroke="#E5E5E5"/>
+  <rect x="20" y="20" width="6" height="6" rx="3" fill="#F24E1E"/>
+  <rect x="26" y="20" width="6" height="6" rx="3" fill="#A259FF"/>
+  <rect x="20" y="26" width="6" height="6" rx="3" fill="#19BCFE"/>
+  <rect x="26" y="26" width="6" height="6" rx="3" fill="#09CF83"/>
+  <circle cx="29" cy="35" r="3" fill="#0ACF83"/>
+  <text x="40" y="32" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#000">Figma</text>
+</svg>

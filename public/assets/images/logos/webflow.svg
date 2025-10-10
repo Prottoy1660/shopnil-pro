@@ -1,0 +1,6 @@
+<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="60" rx="8" fill="white" stroke="#E5E5E5"/>
+  <path d="M20 25c0-2 2-4 4-4s4 2 4 4v10c0 2-2 4-4 4s-4-2-4-4V25z" fill="#4353FF"/>
+  <path d="M28 30c2 0 4-2 4-4s-2-4-4-4" stroke="#4353FF" stroke-width="2" fill="none"/>
+  <text x="40" y="32" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#4353FF">Webflow</text>
+</svg>
