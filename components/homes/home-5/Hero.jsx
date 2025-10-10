@@ -79,7 +79,7 @@ export default function Hero() {
                   </div>
                   <div className="contact-info tmp-scroll-trigger tmp-fade-in animation-order-2">
                     <h4 className="title" style={{textTransform: 'none'}}>I'm a Torontonian</h4>
-                    <p className="para">contact@shopnilmahamud.com</p>
+                    <p className="para">shopnilmahamud@outlook.com</p>
                   </div>
                 </div>
               </div>

@@ -67,8 +67,8 @@ export default function Contact() {
                   <i className="fa-solid fa-envelope" />
                 </div>
                 <h3 className="title">E-mail</h3>
-                <a href="mailto:contact@shopnilmahamud.com">
-                  <p className="para">contact@shopnilmahamud.com</p>
+                <a href="mailto:shopnilmahamud@outlook.com">
+                  <p className="para">shopnilmahamud@outlook.com</p>
                 </a>
               </div>
             </div>

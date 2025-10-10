@@ -71,7 +71,7 @@ export default function Contact({
                     </span>
                     <div className="ft-link-wrap">
                       <h4 className="link-title">E-mail:</h4>
-                      <a href="#">contact@shopnilmahamud.com</a>
+                      <a href="#">shopnilmahamud@outlook.com</a>
                     </div>
                   </li>
                   <li className="tmp-scroll-trigger tmp-fade-in animation-order-2">

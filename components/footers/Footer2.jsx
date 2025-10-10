@@ -155,7 +155,7 @@ export default function Footer2({
                       <span className="ft-icon">
                         <i className="fa-solid fa-envelope" />
                       </span>
-                      <a href="#">contact@shopnilmahamud.com</a>
+                      <a href="#">shopnilmahamud@outlook.com</a>
                     </li>
                   </ul>
                 </div>
