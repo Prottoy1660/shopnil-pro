@@ -4,6 +4,7 @@ import Header1 from "@/components/headers/Header1";
 import Contact from "@/components/others/Contact";
 import Link from "next/link";
 import React from "react";
+import { getSettings } from "@/sanity/lib/queries";
 
 export const metadata = {
   title:
@@ -11,10 +12,14 @@ export const metadata = {
   description:
     "Shopnil Mahamud",
 };
-export default function page() {
+
+export const revalidate = 60;
+
+export default async function page() {
+  const settings = await getSettings();
   return (
     <>
-      <Header1 />
+      <Header1 settings={settings} />
       <div className="breadcrumb-area breadcrumb-bg">
         <div className="container">
           <div className="row">
@@ -35,9 +40,9 @@ export default function page() {
           </div>
         </div>
       </div>
-      <Contact />
-      <Footer2 />
-      <Copyright />
+      <Contact settings={settings} />
+      <Footer2 settings={settings} />
+      <Copyright settings={settings} />
     </>
   );
 }

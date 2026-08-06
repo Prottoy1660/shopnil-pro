@@ -1,32 +1,33 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { portfolioItems } from "@/data/portfolio";
 import { useEffect, useState } from "react";
+import { urlForImage } from "@/sanity/lib/image";
 
-export default function Portofolio({ isLight = false }) {
+export default function Portofolio({ isLight = false, projects = [] }) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [filtered, setFiltered] = useState(portfolioItems);
+  const [filtered, setFiltered] = useState([]);
   const categories = [
     "All",
     "Healthcare",
     "Non-profit",
     "Fintech",
   ];
+  
   useEffect(() => {
     if (activeCategory == "All") {
       setFiltered(
-        portfolioItems
-          .filter(item => item.showInAll === true && typeof item.allOrder === 'number')
-          .sort((a, b) => a.allOrder - b.allOrder)
-          .slice(0, 6)
+        projects
+          .filter((p) => p.showInAll) // Only show items marked for "Show in All"
+          .sort((a, b) => (a.allOrder || 999) - (b.allOrder || 999))
+          .slice(0, 4) // Limit to 4 items
       );
     } else {
       setFiltered(
-        portfolioItems.filter((elm) => elm.categories.includes(activeCategory))
+        projects.filter((elm) => elm.categories?.includes(activeCategory))
       );
     }
-  }, [activeCategory]);
+  }, [activeCategory, projects]);
 
   return (
     <section
@@ -60,15 +61,15 @@ export default function Portofolio({ isLight = false }) {
           <div className="tab-content bg-blur-style-one">
             <div className="tab-pane fade show active">
               <div className="row">
-                {filtered.map((item) => (
-                  <div className="col-lg-6" key={item.id}>
+                {filtered.map((item, i) => (
+                  <div className="col-lg-6" key={item._id || i}>
                     <div
-                      className={`latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-${item.animationOrder}`}
+                      className={`latest-portfolio-card-style-two image-box-hover`}
                     >
                       <div className="portfoli-card-img">
                         <div className="img-box v2">
                           <Link
-                            className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
+                            className=""
                             href={`/project-details${isLight ? "-white" : ""}/${
                               item.slug
                             }`}
@@ -76,9 +77,9 @@ export default function Portofolio({ isLight = false }) {
                             <Image
                               className="w-100"
                               alt="Thumbnail"
-                              src={item.imageSrc}
-                              width={item.width}
-                              height={item.height}
+                              src={item.image ? urlForImage(item.image).url() : ""}
+                              width={item.width || 600}
+                              height={item.height || 400}
                             />
                           </Link>
                         </div>
@@ -96,32 +97,21 @@ export default function Portofolio({ isLight = false }) {
                           </h3>
                           <div className="tag-items">
                             <ul>
-                              {item.tags.map((tag, index) => (
+                              {item.tags?.map((tag, index) => (
                                 <li key={index}>
-                                  <a href="#" className={`tag-item ${item.tagFontSize || ''} ${item.tagFontWeight || ''}`}>
+                                  <Link href={`/project-details${
+                                isLight ? "-white" : ""
+                              }/${item.slug}`}>
                                     {tag}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                         </div>
-                        <Link
-                          className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                          href={`/project-details${isLight ? "-white" : ""}/${
-                            item.slug
-                          }`}
-                        >
-                          <span className="icon-reverse-wrapper">
-                            <span className="btn-text">View design</span>
-                            <span className="btn-icon">
-                              <i className="fa-sharp fa-regular fa-arrow-right" />
-                            </span>
-                            <span className="btn-icon">
-                              <i className="fa-sharp fa-regular fa-arrow-right" />
-                            </span>
-                          </span>
-                        </Link>
+                        <div className="content-right">
+                            {/* You can add something here if needed */}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -129,24 +119,6 @@ export default function Portofolio({ isLight = false }) {
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* View All Projects Button */}
-        <div className="text-center mt-5">
-          <Link
-            href="/works"
-            className="tmp-btn hover-icon-reverse radius-round btn-border btn-lg"
-          >
-            <span className="icon-reverse-wrapper">
-              <span className="btn-text">View All Projects</span>
-              <span className="btn-icon">
-                <i className="fa-sharp fa-regular fa-arrow-right" />
-              </span>
-              <span className="btn-icon">
-                <i className="fa-sharp fa-regular fa-arrow-right" />
-              </span>
-            </span>
-          </Link>
         </div>
       </div>
     </section>

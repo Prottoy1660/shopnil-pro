@@ -1,11 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { certificationData } from "@/data/certifications";
 
-export default function Certification() {
+export default function Certification({ certifications = [] }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    if (certifications && certifications.length > 0) {
+      setItems(certifications);
+    } else {
+      setItems(certificationData);
+    }
+  }, [certifications]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -106,7 +115,7 @@ export default function Certification() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {certificationData.map((item, index) => (
+          {items.map((item, index) => (
             <div className="col-lg-6 col-sm-6" key={index}>
               <motion.div
                 className="enhanced-certification-card"

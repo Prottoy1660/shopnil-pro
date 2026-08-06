@@ -1,12 +1,13 @@
 import Image from "next/image";
 
-export default function TextAnim() {
+export default function TextAnim({ about }) {
+  const missionStatement = about?.missionStatement || "Decade of experience translating complex business challenges across fintech, healthcare, eCommerce, and marketing domains.";
   return (
     <div className="about-content-area">
       <div className="container tmp-section-gap">
         <div className="text-para-doc-wrap">
           <h2 className="text-para-documents tmp-scroll-trigger tmp-fade-in inv-title-animation-wrap animation-order-1">
-            Decade of experience translating complex business challenges across fintech, healthcare, eCommerce, and marketing domains.
+            {missionStatement}
           </h2>
           <div className="right-bg-text-para">
             <Image

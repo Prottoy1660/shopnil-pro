@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import OdometerComponent from "./OdometerComponent";
 import { motion, useAnimation } from "framer-motion";
+import { urlForImage } from "@/sanity/lib/image";
 
-export default function About({ parentClass = "about-us-area" }) {
+export default function About({ parentClass = "about-us-area", about }) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,6 +62,26 @@ export default function About({ parentClass = "about-us-area" }) {
     }
   };
 
+  const yearsExperience = about?.yearsExperience || 12;
+  const projectCount = about?.projectCount || "90+";
+  const title = about?.title || "I design software that's simple to use and helps businesses achieve their goals.";
+  const description = about?.description || "I excel in high-stakes, regulated environments-translating complex business needs into elegant, user-centred experiences through rapid prototyping, cross-functional alignment, and thoughtful documentation.";
+  
+  const defaultCards = [
+    {
+      title: "UI/UX Design",
+      description: "Creating intuitive and engaging user experiences that drive results",
+      icon: "/assets/images/about/logo-1.svg"
+    },
+    {
+      title: "Product Development",
+      description: "Building innovative solutions from concept to deployment",
+      icon: "/assets/images/about/logo-2.svg"
+    }
+  ];
+
+  const cards = about?.cards?.length > 0 ? about.cards : defaultCards;
+
   return (
     <section className={parentClass} id="about">
       <div className="container">
@@ -78,7 +99,7 @@ export default function About({ parentClass = "about-us-area" }) {
                 variants={counterVariants}
               >
                 <h2 className="counter card-title">
-                  <OdometerComponent max={12} /> +
+                  <OdometerComponent max={yearsExperience} /> +
                 </h2>
                 <p className="card-para">Years of Problem Solving</p>
               </motion.div>
@@ -93,7 +114,7 @@ export default function About({ parentClass = "about-us-area" }) {
                 </div>
                 <div className="card-info">
                   <h3 className="card-title">UI/UX</h3>
-                  <p className="card-para">90+ Projects</p>
+                  <p className="card-para">{projectCount} Projects</p>
                 </div>
               </motion.div>
             </div>
@@ -114,60 +135,40 @@ export default function About({ parentClass = "about-us-area" }) {
                   className="title split-collab"
                   variants={itemVariants}
                 >
-                  I design software that's simple to use and helps businesses achieve their goals.
+                  {title}
                 </motion.h2>
                 <motion.p 
                   className="description"
                   variants={itemVariants}
                 >
-                  I excel in high-stakes, regulated environments-translating complex business needs into elegant, user-centred experiences through rapid prototyping, cross-functional alignment, and thoughtful documentation.
+                  {description}
                 </motion.p>
               </motion.div>
               <div className="about-us-section-card row g-5">
-                <div className="col-lg-6 col-md-6 col-sm-6 col-12">
-                  <motion.div 
-                    className="about-us-card"
-                    variants={cardVariants}
-                    whileHover="hover"
-                  >
-                    <div className="card-head">
-                      <div className="logo-img">
-                        <Image
-                          alt="logo"
-                          src="/assets/images/about/logo-1.svg"
-                          width={24}
-                          height={24}
-                        />
+                {cards.map((card, index) => (
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-12" key={index}>
+                    <motion.div 
+                      className="about-us-card"
+                      variants={cardVariants}
+                      whileHover="hover"
+                    >
+                      <div className="card-head">
+                        <div className="logo-img">
+                          <Image
+                            alt="logo"
+                            src={card.icon?.asset ? urlForImage(card.icon).url() : (typeof card.icon === 'string' ? card.icon : "/assets/images/about/logo-1.svg")}
+                            width={24}
+                            height={24}
+                          />
+                        </div>
+                        <h3 className="card-title">{card.title}</h3>
                       </div>
-                      <h3 className="card-title">UI/UX Design</h3>
-                    </div>
-                    <p className="card-para">
-                      Creating intuitive and engaging user experiences that drive results
-                    </p>
-                  </motion.div>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-6 col-12">
-                  <motion.div 
-                    className="about-us-card"
-                    variants={cardVariants}
-                    whileHover="hover"
-                  >
-                    <div className="card-head">
-                      <div className="logo-img">
-                        <Image
-                          alt="logo"
-                          src="/assets/images/about/logo-2.svg"
-                          width={24}
-                          height={24}
-                        />
-                      </div>
-                      <h3 className="card-title">Product Development</h3>
-                    </div>
-                    <p className="card-para">
-                      Building innovative solutions from concept to deployment
-                    </p>
-                  </motion.div>
-                </div>
+                      <p className="card-para">
+                        {card.description}
+                      </p>
+                    </motion.div>
+                  </div>
+                ))}
               </div>
 
             </div>

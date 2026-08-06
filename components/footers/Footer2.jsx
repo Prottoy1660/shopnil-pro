@@ -14,9 +14,19 @@ import emailjs from "@emailjs/browser";
 export default function Footer2({
   darkLogo = "/assets/images/logo/SM-LOGO.png",
   lightLogo = "/assets/images/logo/SM-D.png",
+  settings = []
 }) {
   const form = useRef();
   const [loading, setLoading] = useState(false);
+
+  // Get contact info from settings if available
+  const contactInfo = Array.isArray(settings) ? (settings.length > 0 ? settings[0] : null) : settings;
+  const email = contactInfo?.email || "shopnilmahamud@outlook.com";
+  const phone = contactInfo?.phone || "+1 (647) 861-9894";
+  const address = contactInfo?.address || "Fort York Boulevard, Toronto, ON M5V 0E6";
+  const description = contactInfo?.footerText || "I design software that's simple to use and helps businesses achieve their goals.";
+  const socialLinks = contactInfo?.socialLinks || {};
+  const { instagram, linkedin, twitter, facebook } = socialLinks;
 
   const sendNewsletter = (e) => {
     e.preventDefault();
@@ -98,19 +108,19 @@ export default function Footer2({
                     </Link>
                   </div>
                   <p className="description">
-                  Focused on building brands and creating digital experiences for 12+ years, currently based in Toronto, Canada
+                  {description}
                   </p>
                   <div className="social-link footer">
-                    <a href="https://www.instagram.com/shopnil.journey" target="_blank" rel="noopener noreferrer">
+                    <a href={instagram || "https://www.instagram.com/shopnil.journey"} target="_blank" rel="noopener noreferrer">
                       <i className="fa-brands fa-instagram" />
                     </a>
-                    <a href="https://www.linkedin.com/in/shopnilm" target="_blank" rel="noopener noreferrer">
+                    <a href={linkedin || "https://www.linkedin.com/in/shopnilm"} target="_blank" rel="noopener noreferrer">
                       <i className="fa-brands fa-linkedin-in" />
                     </a>
-                    <a href="https://x.com/shopniljourney" target="_blank" rel="noopener noreferrer">
+                    <a href={twitter || "https://x.com/shopniljourney"} target="_blank" rel="noopener noreferrer">
                       <XIcon className="social-icon" />
                     </a>
-                    <a href="https://www.facebook.com/designarium.net" target="_blank" rel="noopener noreferrer">
+                    <a href={facebook || "https://www.facebook.com/designarium.net"} target="_blank" rel="noopener noreferrer">
                       <i className="fa-brands fa-facebook" />
                     </a>
                   </div>
@@ -143,19 +153,19 @@ export default function Footer2({
                       <span className="ft-icon">
                         <i className="fa-solid fa-phone" />
                       </span>
-                      <a href="#">+1 (647) 861-9894</a>
+                      <a href={`tel:${phone}`}>{phone}</a>
                     </li>
                     <li>
                       <span className="ft-icon">
                         <i className="fa-solid fa-location-dot" />
                       </span>
-                      Toronto, Canada
+                      {address}
                     </li>
                     <li>
                       <span className="ft-icon">
                         <i className="fa-solid fa-envelope" />
                       </span>
-                      <a href="#">shopnilmahamud@outlook.com</a>
+                      <a href={`mailto:${email}`}>{email}</a>
                     </li>
                   </ul>
                 </div>

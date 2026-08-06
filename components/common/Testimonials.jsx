@@ -5,9 +5,19 @@ import { Autoplay, Pagination, EffectCards, EffectCoverflow } from "swiper/modul
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { urlForImage } from "@/sanity/lib/image";
 
-export default function Testimonials() {
+export default function Testimonials({ testimonials = [] }) {
   const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    if (testimonials && testimonials.length > 0) {
+      setItems(testimonials);
+    } else {
+      setItems(testimonials2);
+    }
+  }, [testimonials]);
   
   const openModal = (testimonial, index) => {
     setSelectedTestimonial({ ...testimonial, index });
@@ -125,7 +135,7 @@ export default function Testimonials() {
           }}
           modules={[Pagination, Autoplay, EffectCoverflow]}
         >
-          {testimonials2.map((testimonial, index) => (
+          {items.map((testimonial, index) => (
             <SwiperSlide className="swiper-slide" key={index}>
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9, rotateY: -45 }}
@@ -148,7 +158,7 @@ export default function Testimonials() {
                     >
                       <Image
                         alt={testimonial.name}
-                        src={testimonial.image}
+                        src={testimonial.image?.asset ? urlForImage(testimonial.image).url() : testimonial.image || "/assets/images/testimonial/profile-1.png"}
                         width={301}
                         height={301}
                         className="rounded-full"
@@ -299,13 +309,15 @@ export default function Testimonials() {
                 >
                   <div className="client-info-modal">
                     <div className="client-img-modal">
-                      <Image
-                        alt={selectedTestimonial.name}
-                        src={selectedTestimonial.image}
-                        width={80}
-                        height={80}
-                        className="rounded-full"
-                      />
+                      {(selectedTestimonial.image?.asset || selectedTestimonial.image) ? (
+                        <Image
+                          alt={selectedTestimonial.name}
+                          src={selectedTestimonial.image?.asset ? urlForImage(selectedTestimonial.image).url() : selectedTestimonial.image}
+                          width={80}
+                          height={80}
+                          className="rounded-full"
+                        />
+                      ) : null}
                     </div>
                     <div className="client-details-modal">
                       <h3 className="client-name">{selectedTestimonial.name}</h3>

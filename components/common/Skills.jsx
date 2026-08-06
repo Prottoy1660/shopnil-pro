@@ -57,12 +57,16 @@ const skillIcons = {
 
 export default function Skills({
   parentClass = "tmp-skill-area tmp-section-gapTop",
+  skills = []
 }) {
+  // If skills is provided (from Sanity), use it. Otherwise use static skillSections.
+  const data = skills.length > 0 ? skills : skillSections;
+
   return (
     <div className={parentClass} id="skills">
       <div className="container">
         <div className="row g-5">
-          {skillSections.map((section, sectionIndex) => (
+          {data.map((section, sectionIndex) => (
             <div className="col-lg-6" key={sectionIndex}>
               <div className="progress-wrapper">
                 <div className="content">
@@ -76,7 +80,7 @@ export default function Skills({
                       </p>
                     )}
                   </div>
-                  {section.skills.map((skill, skillIndex) => {
+                  {section.skills && section.skills.map((skill, skillIndex) => {
                     const iconData = skillIcons[skill.name] || {
                       src: "/assets/images/skill/default-skill.png",
                       color: "#FFFFFF",

@@ -3,25 +3,32 @@ import emailjs from "@emailjs/browser";
 import React, { useRef } from "react";
 import { toast } from "react-toastify";
 
-export default function Contact() {
+export default function Contact({ settings = [] }) {
   const form = useRef();
+
+  // Get contact info from settings if available
+  // Handle both array and single object input
+  const contactInfo = Array.isArray(settings) ? (settings.length > 0 ? settings[0] : null) : settings;
+  const email = contactInfo?.email || "shopnilmahamud@outlook.com";
+  const phone = contactInfo?.phone || "+1 (647) 861-9894";
+  const address = contactInfo?.address || "Fort York Boulevard, Toronto, ON M5V 0E6";
 
   const sandMail = (e) => {
     e.preventDefault();
     emailjs
       .sendForm(
         // EmailJS service ID - identifies which email service to use
-        "service_rch0yms",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_rch0yms",
 
         // EmailJS template ID - specifies which email template to use
-        "template_d3zw9lt",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_d3zw9lt",
 
         // Reference to the HTML form element containing user input
         form.current,
 
         {
           // Public API key for authentication with EmailJS
-          publicKey: "FR61761uRFyHO8Z_x",
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "FR61761uRFyHO8Z_x",
         }
       )
       .then((res) => {
@@ -58,7 +65,7 @@ export default function Contact() {
                   <i className="fa-solid fa-location-dot" />
                 </div>
                 <h3 className="title">Address</h3>
-                <p className="para">Fort York Boulevard, Toronto, ON M5V 0E6</p>
+                <p className="para">{address}</p>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -67,8 +74,8 @@ export default function Contact() {
                   <i className="fa-solid fa-envelope" />
                 </div>
                 <h3 className="title">E-mail</h3>
-                <a href="mailto:shopnilmahamud@outlook.com">
-                  <p className="para">shopnilmahamud@outlook.com</p>
+                <a href={`mailto:${email}`}>
+                  <p className="para">{email}</p>
                 </a>
               </div>
             </div>
@@ -78,7 +85,7 @@ export default function Contact() {
                   <i className="fa-solid fa-phone" />
                 </div>
                 <h3 className="title">Call Me</h3>
-                <p className="para">+1 (647) 861-9894</p>
+                <p className="para">{phone}</p>
               </div>
             </div>
           </div>

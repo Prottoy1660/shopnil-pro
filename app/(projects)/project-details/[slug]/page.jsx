@@ -2,23 +2,30 @@ import Copyright from "@/components/footers/Copyright";
 import Footer2 from "@/components/footers/Footer2";
 import Header1 from "@/components/headers/Header1";
 import ProjectDetails from "@/components/projects/ProjectDetails";
-import { allPortfolioItems } from "@/data/portfolio";
+import { getProject, getProjects, getSettings } from "@/sanity/lib/queries";
 import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title:
-    "Project Details || Shopnil Mahamud",
-  description:
-    "Shopnil Mahamud",
+  title: "Project Details || Shopnil Mahamud",
+  description: "Shopnil Mahamud",
 };
+
+export const revalidate = 60;
+
 export default async function page({ params }) {
   const { slug } = await params;
-  const portfolioItem =
-    allPortfolioItems.find((blog) => blog.slug == slug) || allPortfolioItems[0];
+  const portfolioItem = await getProject(slug);
+  const projects = await getProjects();
+  const settings = await getSettings();
+
+  if (!portfolioItem) {
+    return <div>Project not found</div>;
+  }
+
   return (
     <>
-      <Header1 />
+      <Header1 settings={settings} />
       <div className="breadcrumb-area breadcrumb-bg">
         <div className="container">
           <div className="row">
@@ -41,9 +48,9 @@ export default async function page({ params }) {
           </div>
         </div>
       </div>
-      <ProjectDetails portfolioItem={portfolioItem} />
-      <Footer2 />
-      <Copyright />
+      <ProjectDetails portfolioItem={portfolioItem} projects={projects} />
+      <Footer2 settings={settings} />
+      <Copyright settings={settings} />
     </>
   );
 }

@@ -24,10 +24,16 @@
   
   @media #{variables.$md-layout} {
     top: 63%;
+    left: 50%;
+  }
+  
+  @media #{variables.$sm-layout} {
+    left: 50%;
   }
   
   @media #{variables.$large-mobile} {
     top: 60%;
+    left: 25%;
     transform: translate(-50%, -50%) scale(0.9);
   }
   

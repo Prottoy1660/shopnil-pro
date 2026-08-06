@@ -10,7 +10,22 @@ import XIcon from "../common/XIcon";
 export default function Header1({
   darkLogo = "/assets/images/logo/SM-LOGO.png",
   lightLogo = "/assets/images/logo/SM-D.png",
+  settings = []
 }) {
+  // Get social links from settings if available
+  const contactInfo = Array.isArray(settings) ? (settings.length > 0 ? settings[0] : null) : settings;
+  const socialLinksList = contactInfo?.socialLinks || [];
+  
+  // Transform array of objects to object of urls for easy access
+  const socialLinks = Array.isArray(socialLinksList) 
+    ? socialLinksList.reduce((acc, link) => {
+        acc[link.platform?.toLowerCase()] = link.url;
+        return acc;
+      }, {})
+    : {};
+
+  const { instagram, linkedin, twitter, facebook, dribbble, behance } = socialLinks;
+
   return (
     <header className="tmp-header-area-start header-one header--sticky header--transparent">
       <div className="container">
@@ -41,16 +56,16 @@ export default function Header1({
               <div className="tmp-header-right">
                 <div className="social-share-wrapper d-none d-md-block">
                   <div className="social-link">
-                    <a href="https://www.instagram.com/shopnil.journey" target="_blank" rel="noopener noreferrer">
+                    <a href={instagram || "https://www.instagram.com/shopnil.journey"} target="_blank" rel="noopener noreferrer">
                       <i className="fa-brands fa-instagram" />
                     </a>
-                    <a href="https://www.linkedin.com/in/shopnilm" target="_blank" rel="noopener noreferrer">
+                    <a href={linkedin || "https://www.linkedin.com/in/shopnilm"} target="_blank" rel="noopener noreferrer">
                       <i className="fa-brands fa-linkedin-in" />
                     </a>
-                    <a href="https://x.com/shopniljourney" target="_blank" rel="noopener noreferrer">
+                    <a href={twitter || "https://x.com/shopniljourney"} target="_blank" rel="noopener noreferrer">
                       <XIcon className="social-icon" />
                     </a>
-                    <a href="https://www.facebook.com/designarium.net" target="_blank" rel="noopener noreferrer">
+                    <a href={facebook || "https://www.facebook.com/designarium.net"} target="_blank" rel="noopener noreferrer">
                       <i className="fa-brands fa-facebook" />
                     </a>
                   </div>

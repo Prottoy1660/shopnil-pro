@@ -87,7 +87,7 @@ export const websiteProjects = [
     imageSrc: "/assets/images/latest-portfolio/ax_cp.png",
     width: 1939,
     height: 1572,
-    title: "Augmedix",
+    title: "Augmedix Inc.",
     description: "Medical documentation platform for healthcare professionals.",
     tags: ["Healthcare", "SaaS", "Documentation"],
     liveUrl: "https://www.augmedix.com"
@@ -151,29 +151,18 @@ export const funProjects = [
     tags: ["YouTube", "Mystery", "Design", "Content Creation"],
     liveUrl: "https://searchofmystery.com",
     slug: "search-of-mystery",
-    // Detailed content for the project page
-    detailedContent: {
-      about: "Welcome to 'Search of Mystery' - my YouTube channel where I explore the fascinating world of mysteries, share design insights, and create engaging content that keeps viewers coming back for more. This channel is my creative outlet where I combine storytelling, design analysis, and mystery exploration to create unique and compelling videos.",
-      
-      howItWorks: "Each video on Search of Mystery is carefully crafted to take viewers on a journey. I research intriguing mysteries, analyze design elements in various contexts, and present information in an engaging, visually appealing way. The channel combines documentary-style storytelling with modern design aesthetics to create an immersive viewing experience.",
-      
-      features: [
-        "Mystery exploration and investigation videos",
-        "Design analysis and creative insights",
-        "High-quality visual storytelling",
-        "Engaging community discussions",
-        "Regular upload schedule with consistent content",
-        "Interactive elements and viewer engagement"
-      ],
-      
-      technicalDetails: "The channel is produced using professional video editing software, high-quality recording equipment, and custom graphics created with design tools. I use advanced editing techniques, color grading, and sound design to create cinematic-quality content that stands out in the YouTube landscape.",
-      
-      whatILearned: "Running Search of Mystery has taught me invaluable lessons about content creation, audience engagement, and storytelling. I've learned how to research complex topics, present information clearly, and build a community around shared interests. The channel has also improved my video production skills and understanding of what makes content truly engaging.",
-      
-      challenges: "The biggest challenges have been maintaining consistent upload schedules while ensuring quality, researching complex mysteries thoroughly, and balancing entertainment with accuracy. I've also had to learn video production techniques and develop my own unique style that sets the channel apart from others in the genre.",
-      
-      futurePlans: "I plan to expand the channel with more diverse content, including collaborations with other creators, live streams for community engagement, and potentially branching into podcast format. I also want to create more interactive content and develop merchandise that reflects the channel's unique aesthetic and community spirit."
-    }
+  },
+  {
+    id: 2,
+    imageSrc: "/assets/images/latest-portfolio/ilmaan.png",
+    width: 550,
+    height: 396,
+    title: "Ilmaan Academy",
+    description: "",
+    tags: ["YouTube", "Mystery", "Design", "Content Creation"],
+    liveUrl: "https://www.ilmaan.academy",
+    
+
   }
 ].map((elm) => {
   return {

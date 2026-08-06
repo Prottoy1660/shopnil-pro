@@ -5,8 +5,15 @@ import { toast } from "react-toastify";
 
 export default function Contact({
   parentClass = "get-in-touch-area tmp-section-gapTop",
+  settings = []
 }) {
   const form = useRef();
+  
+  // Get contact info from settings if available
+  const contactInfo = Array.isArray(settings) && settings.length > 0 ? settings[0] : (settings && !Array.isArray(settings) ? settings : null);
+  const email = contactInfo?.email || "shopnilmahamud@outlook.com";
+  const phone = contactInfo?.phone || "+1 (647) 861-9894";
+  const address = contactInfo?.address || "Fort York Boulevard, Toronto, ON M5V 0E6";
 
   const sendMail = (e) => {
     e.preventDefault();
@@ -71,7 +78,7 @@ export default function Contact({
                     </span>
                     <div className="ft-link-wrap">
                       <h4 className="link-title">E-mail:</h4>
-                      <a href="#">shopnilmahamud@outlook.com</a>
+                      <a href={`mailto:${email}`}>{email}</a>
                     </div>
                   </li>
                   <li className="tmp-scroll-trigger tmp-fade-in animation-order-2">
@@ -80,7 +87,7 @@ export default function Contact({
                     </span>
                     <div className="ft-link-wrap">
                       <h4 className="link-title">Location:</h4>
-                      <div>Fort York Boulevard, Toronto, ON M5V 0E6</div>
+                      <div>{address}</div>
                     </div>
                   </li>
                   <li className="tmp-scroll-trigger tmp-fade-in animation-order-3 tmp-link-animation">
@@ -89,7 +96,7 @@ export default function Contact({
                     </span>
                     <div className="ft-link-wrap">
                       <h4 className="link-title">Contact:</h4>
-                      <a href="#">+1 (647) 861-9894</a>
+                      <a href={`tel:${phone}`}>{phone}</a>
                     </div>
                   </li>
                 </ul>

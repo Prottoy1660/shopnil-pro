@@ -1,12 +1,22 @@
 "use client";
 import { resumeItems } from "@/data/experiences";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { urlForImage } from "@/sanity/lib/image";
 
-export default function Experience() {
+export default function Experience({ experiences = [] }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [hoveredSection, setHoveredSection] = useState(null);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    if (experiences && experiences.length > 0) {
+      setItems(experiences);
+    } else {
+      setItems(resumeItems);
+    }
+  }, [experiences]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -129,10 +139,10 @@ export default function Experience() {
               variants={containerVariants}
             >
               <div className="row g-4">
-                {resumeItems.map((item, index) => (
+                {items.map((item, index) => (
                   <div className="col-md-6" key={index}>
                     <motion.div
-                      className={`modern-resume-card ${item.isLast ? "mb--0" : ""}`}
+                      className={`modern-resume-card ${index === items.length - 1 ? "mb--0" : ""}`}
                       variants={cardVariants}
                       whileHover="hover"
                       onHoverStart={() => {
@@ -156,7 +166,7 @@ export default function Experience() {
                             transition={{ duration: 0.3 }}
                           >
                             <Image
-                              src={item.logo}
+                              src={item.logo?.asset ? urlForImage(item.logo).url() : item.logo || "/assets/images/logo/logo1.jpg"}
                               alt={`${item.title} logo`}
                               width={40}
                               height={40}

@@ -13,28 +13,44 @@ import TextAnim from "@/components/common/TextAnim";
 import Certification from "@/components/common/Certification";
 import TrustedBy from "@/components/common/TrustedBy";
 import React from "react";
+import { getAbout, getCertifications, getExperiences, getHero, getProjects, getSettings, getSkills, getTestimonials, getTrustedBy } from "@/sanity/lib/queries";
 
-export const metadata = {
-  title: "Shopnil Mahamud",
-  description: "",
-};
+export async function generateMetadata() {
+  const hero = await getHero();
+  const about = await getAbout();
+  
+  return {
+    title: hero?.typerStrings?.[0] ? `${hero.typerStrings[0]} - Shopnil Mahamud` : "Shopnil Mahamud",
+    description: about?.description || "UX/UI Designer & Developer creating beautiful and functional digital experiences.",
+  };
+}
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
+  const experiences = await getExperiences();
+  const skills = await getSkills();
+  const testimonials = await getTestimonials();
+  const certifications = await getCertifications();
+  const settings = await getSettings();
+  const about = await getAbout();
+  const hero = await getHero();
+  const trustedBy = await getTrustedBy();
+
   return (
     <>
-      <Header1 />
-      <Hero />
-      <TextAnim />
-      <Portofolio />
-      <About />
-      <Experience />
-      <Certification />
-      <Skills/>
-      <Testimonials />
-      <TrustedBy />
-      <Contact />
-      <Footer2/>
-      <Copyright />
+      <Header1 settings={settings} />
+      <Hero hero={hero} />
+      <TextAnim about={about} />
+      <Portofolio projects={projects} />
+      <About about={about} />
+      <Experience experiences={experiences} />
+      <Certification certifications={certifications} />
+      <Skills skills={skills} />
+      <Testimonials testimonials={testimonials} />
+      <TrustedBy trustedBy={trustedBy} />
+      <Contact settings={settings} />
+      <Footer2 settings={settings} />
+      <Copyright settings={settings} />
     </>
   );
 }

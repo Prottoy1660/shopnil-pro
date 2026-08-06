@@ -1,6 +1,10 @@
 import React from "react";
 import Link from "next/link";
-export default function Copyright() {
+export default function Copyright({ settings = [] }) {
+  // Get copyright info from settings if available
+  const contactInfo = Array.isArray(settings) ? (settings.length > 0 ? settings[0] : null) : settings;
+  const copyrightText = contactInfo?.copyrightText || `Shopnil Mahamud ${new Date().getFullYear()}`;
+
   return (
     <div className="copyright-area-one">
       <div className="container">
@@ -13,7 +17,7 @@ export default function Copyright() {
                   href="https://shopnilMahamud.com"
                   target="_blank"
                 >
-                  Shopnil Mahamud {new Date().getFullYear()}
+                  {copyrightText}
                 </a>{" "}
                 | All Rights Reserved
               </p>{" "}

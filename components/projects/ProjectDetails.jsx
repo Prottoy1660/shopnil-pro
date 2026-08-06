@@ -6,8 +6,10 @@ import ProjectsShowcase from "./ProjectsShowcase";
 import FigmaViewer from "./FigmaViewer";
 import ProjectGallery from "./ProjectGallery";
 import VideoModal from "../common/VideoModal";
+import { urlForImage } from "@/sanity/lib/image";
+import { PortableText } from "@portabletext/react";
 
-export default function ProjectDetails({ portfolioItem }) {
+export default function ProjectDetails({ portfolioItem, projects }) {
   // State for video modal
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState("");
@@ -18,7 +20,7 @@ export default function ProjectDetails({ portfolioItem }) {
   // Use the project-specific gallery images from the portfolio item data
   const galleryImages = portfolioItem.galleryImages || [
     {
-      src: portfolioItem.imageSrc,
+      src: portfolioItem.image ? urlForImage(portfolioItem.image).url() : "",
       alt: `${portfolioItem.title} - Main Image`
     }
   ];
@@ -34,27 +36,27 @@ export default function ProjectDetails({ portfolioItem }) {
     setCurrentVideoUrl("");
   };
 
+  const components = {
+    block: {
+      normal: ({children}) => <p className="docs">{children}</p>,
+      h3: ({children}) => <h3 className="mini-title">{children}</h3>,
+      h4: ({children}) => <h4 className="check-box-item">{children}</h4>,
+    },
+    marks: {
+      strong: ({children}) => <strong>{children}</strong>,
+      em: ({children}) => <em>{children}</em>,
+    }
+  };
+
   // Render a section with optional image
   const renderSection = (section) => {
     const { title, content, image, imagePosition, images, videoUrl, videoPosition, titleFontSize, titleFontWeight, contentFontSize, contentLineHeight } = section;
-    
-    // Function to format text with bold and highlight
-    const formatText = (text) => {
-      if (typeof text !== 'string') return text;
-      
-      // Replace **text** with bold
-      let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      // Replace ==text== with highlight
-      formattedText = formattedText.replace(/==(.*?)==/g, '<mark>$1</mark>');
-      
-      return formattedText;
-    };
 
     const renderImages = (imgs) => (
       <div className="section-images">
         {imgs.map((img, idx) => (
           <div className="section-image" key={idx}>
-            <img src={img} alt={`${title} illustration ${idx + 1}`} className="img-fluid" />
+            <img src={urlForImage(img).url()} alt={`${title} illustration ${idx + 1}`} className="img-fluid" />
           </div>
         ))}
       </div>
@@ -102,13 +104,6 @@ export default function ProjectDetails({ portfolioItem }) {
       titleFontWeight || ''
     ].filter(Boolean).join(' ');
 
-    // Build content classes with font properties
-    const contentClasses = [
-      'docs',
-      contentFontSize || '',
-      contentLineHeight || ''
-    ].filter(Boolean).join(' ');
-
     // Add inline styles for smaller title
     const titleStyle = title && (title.includes("Previous process:") || title.includes("New process:")) ? {
       fontSize: '18px',
@@ -117,89 +112,22 @@ export default function ProjectDetails({ portfolioItem }) {
       fontWeight: '600'
     } : {};
 
-    // Add tighter spacing for outcome texts
-    const contentStyle = content && typeof content === 'string' && (
-      content.includes("Speeding up data entry by 5x") ||
-      content.includes("Reducing paper trails significantly") ||
-      content.includes("Better user-experience and satisfied users")
-    ) ? {
-      marginBottom: '8px'
-    } : {};
-
     return (
       <div className="section-block">
         {title && <h3 className={titleClasses} style={titleStyle}>{title}</h3>}
         {videoPosition === 'before' && videoUrl && renderVideo(videoUrl)}
         {imagePosition === 'before' && (images ? renderImages(images) : image && (
           <div className="section-image">
-            <img src={image} alt={`${title} illustration`} className="img-fluid" />
+            <img src={urlForImage(image).url()} alt={`${title} illustration`} className="img-fluid" />
           </div>
         ))}
         
-        {typeof content === 'string' ? (
-          <p className={contentClasses} style={contentStyle} dangerouslySetInnerHTML={{ __html: formatText(content) }} />
-        ) : Array.isArray(content) ? (
-          <div className="check-box-wrap">
-            <ul className="nested-points-list">
-              {content.map((item, index) => (
-                <li key={index} className="nested-point-item">
-                  {typeof item === 'string' ? (
-                    <h4 className={`check-box-item ${contentFontSize || ''} ${contentLineHeight || ''}`}>
-                      <span className="check-icon">
-                        <i className="fa-solid fa-circle-check" />
-                      </span>
-                      <span dangerouslySetInnerHTML={{ __html: formatText(item) }} />
-                    </h4>
-                  ) : item.mainPoint && item.subPoints ? (
-                    // Nested structure with main point and sub-points
-                    <div className="nested-point-structure">
-                      <h4 className={`check-box-item main-point ${contentFontSize || ''} ${contentLineHeight || ''}`}>
-                        {!item.noIcon && (
-                          <span className="check-icon">
-                            <i className="fa-solid fa-circle-check" />
-                          </span>
-                        )}
-                        <span dangerouslySetInnerHTML={{ __html: formatText(item.mainPoint) }} />
-                      </h4>
-                      {item.subPoints && (
-                        <ul className="sub-points-list">
-                          {item.subPoints.map((subPoint, subIndex) => (
-                            <li key={subIndex} className="sub-point-item">
-                              <span className="sub-point-icon">
-                                <i className="fa-solid fa-arrow-right" />
-                              </span>
-                              <span className={`sub-point-text ${contentFontSize || ''} ${contentLineHeight || ''}`} 
-                                    dangerouslySetInnerHTML={{ __html: formatText(subPoint) }} />
-                              
-                              {/* Handle sub-sub-points */}
-                              {typeof subPoint === 'object' && subPoint.subSubPoints && (
-                                <ul className="sub-sub-points-list">
-                                  {subPoint.subSubPoints.map((subSubPoint, subSubIndex) => (
-                                    <li key={subSubIndex} className="sub-sub-point-item">
-                                      <span className="sub-sub-point-icon">
-                                        <i className="fa-solid fa-minus" />
-                                      </span>
-                                      <span className={`sub-sub-point-text ${contentFontSize || ''} ${contentLineHeight || ''}`} 
-                                            dangerouslySetInnerHTML={{ __html: formatText(subSubPoint) }} />
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
+        {content && <PortableText value={content} components={components} />}
+        
         {videoPosition === 'after' && videoUrl && renderVideo(videoUrl)}
         {imagePosition === 'after' && (images ? renderImages(images) : image && (
           <div className="section-image">
-            <img src={image} alt={`${title} illustration`} className="img-fluid" />
+            <img src={urlForImage(image).url()} alt={`${title} illustration`} className="img-fluid" />
           </div>
         ))}
       </div>
@@ -214,7 +142,7 @@ export default function ProjectDetails({ portfolioItem }) {
             <div className="project-details-thumnail-wrap" style={{ marginBottom: '30px' }}>
               <Image
                 alt="thumbnail"
-                src={portfolioItem.imageSrc}
+                src={portfolioItem.image ? urlForImage(portfolioItem.image).url() : ""}
                 width={1290}
                 height={560}
               />
@@ -241,17 +169,6 @@ export default function ProjectDetails({ portfolioItem }) {
                   {renderSection(section)}
                 </React.Fragment>
               ))}
-
-              {/* Fallback to default sections if no custom sections defined */}
-              {!portfolioItem.sections && (
-                <>
-                  {portfolioItem.overview && renderSection({ title: "Overview", content: portfolioItem.overview })}
-                  {portfolioItem.painPoints && renderSection({ title: "Pain Points", content: portfolioItem.painPoints })}
-                  {portfolioItem.solution && renderSection({ title: "Solution", content: portfolioItem.solution, image: portfolioItem.solutionImage })}
-                  {portfolioItem.outcomes && renderSection({ title: "Outcome", content: portfolioItem.outcomes })}
-                  {portfolioItem.userGroups && renderSection({ title: "User Groups", content: portfolioItem.userGroups })}
-                </>
-              )}
             </div>
           </div>
           <div className="col-lg-4">
@@ -268,7 +185,7 @@ export default function ProjectDetails({ portfolioItem }) {
                         <span className="project-details-info-text">
                           {Array.isArray(detail.value)
                             ? detail.value.join(', ')
-                            : detail.value}
+                            : detail.value || detail.valueString}
                         </span>
                       </div>
                     )) || (
@@ -287,7 +204,7 @@ export default function ProjectDetails({ portfolioItem }) {
                             {portfolioItem.tags?.map((tag, index) => (
                               <span key={index}>
                                 {tag}
-                                {index < portfolioItem.tags.length - 1 ? ", " : ""}
+                                {index < portfolioItem.tags.length - 1 && ", "}
                               </span>
                             ))}
                           </span>
@@ -314,7 +231,7 @@ export default function ProjectDetails({ portfolioItem }) {
         <div className="row">
           <div className="col-lg-8">
             {/* Projects Showcase Section */}
-            <ProjectsShowcase currentProjectId={portfolioItem.id} />
+            <ProjectsShowcase currentProjectId={portfolioItem.id} currentProjectSlug={portfolioItem.slug?.current || portfolioItem.slug} projects={projects} />
           </div>
         </div>
       </div>

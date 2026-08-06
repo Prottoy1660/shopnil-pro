@@ -1,9 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { caseStudies, websiteProjects, funProjects } from "@/data/works";
+import { caseStudies as staticCaseStudies, websiteProjects as staticWebsiteProjects, funProjects as staticFunProjects } from "@/data/works";
+import { urlForImage } from "@/sanity/lib/image";
 
-export default function WorksSection() {
+export default function WorksSection({ projects }) {
+  // Filter projects by category if Sanity data is available
+  const sanityCaseStudies = projects?.filter(p => p.categories?.includes("Case Study"));
+  const sanityWebsiteProjects = projects?.filter(p => p.categories?.includes("Website Project"));
+  const sanityFunProjects = projects?.filter(p => p.categories?.includes("Fun Project"));
+
+  // Use Sanity data if available, otherwise fallback to static data
+  const caseStudies = sanityCaseStudies?.length > 0 ? sanityCaseStudies : staticCaseStudies;
+  const websiteProjects = sanityWebsiteProjects?.length > 0 ? sanityWebsiteProjects : staticWebsiteProjects;
+  const funProjects = sanityFunProjects?.length > 0 ? sanityFunProjects : staticFunProjects;
+
   return (
     <div className="works-section">
       {/* Hero Section */}
@@ -35,7 +46,7 @@ export default function WorksSection() {
           </div>
           <div className="row">
             {caseStudies.map((item) => (
-              <div key={item.id} className="col-lg-6">
+              <div key={item.id || item._id} className="col-lg-6">
                 <div className="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in">
                   <div className="portfoli-card-img">
                     <div className="img-box v2">
@@ -46,9 +57,9 @@ export default function WorksSection() {
                         <Image
                           className="w-100"
                           alt={item.title}
-                          src={item.imageSrc}
-                          width={item.width}
-                          height={item.height}
+                          src={item.image?.asset ? urlForImage(item.image).url() : item.imageSrc}
+                          width={item.width || 1939}
+                          height={item.height || 1572}
                         />
                       </Link>
                     </div>
@@ -62,7 +73,7 @@ export default function WorksSection() {
                       </h3>
                       <div className="tag-items">
                         <ul>
-                          {item.tags.map((tag, index) => (
+                          {item.tags?.map((tag, index) => (
                             <li key={index}>
                               <a href="#" className="tag-item">
                                 {tag}
@@ -111,22 +122,22 @@ export default function WorksSection() {
           </div>
           <div className="row">
             {websiteProjects.map((item) => (
-              <div key={item.id} className="col-lg-4 col-md-6 col-12 mb-4">
+              <div key={item.id || item._id} className="col-lg-4 col-md-6 col-12 mb-4">
                 <div className="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in">
                   <div className="portfoli-card-img">
                     <div className="img-box v2">
                       <Link
                         className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                        href={item.liveUrl}
+                        href={item.liveUrl || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <Image
                           className="w-100"
                           alt={item.title}
-                          src={item.imageSrc}
-                          width={item.width}
-                          height={item.height}
+                          src={item.image?.asset ? urlForImage(item.image).url() : item.imageSrc}
+                          width={item.width || 1939}
+                          height={item.height || 1572}
                         />
                       </Link>
                     </div>
@@ -135,7 +146,7 @@ export default function WorksSection() {
                     <div className="content-left">
                       <h3 className="portfolio-card-title">
                         <Link 
-                          href={item.liveUrl}
+                          href={item.liveUrl || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -145,7 +156,7 @@ export default function WorksSection() {
                     </div>
                     <Link
                       className="tmp-btn hover-icon-reverse radius-round btn-border btn-md"
-                      href={item.liveUrl}
+                      href={item.liveUrl || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -184,20 +195,22 @@ export default function WorksSection() {
           </div>
           <div className="row">
             {funProjects.map((item) => (
-              <div key={item.id} className="col-lg-4 col-md-6 col-12 mb-4">
+              <div key={item.id || item._id} className="col-lg-4 col-md-6 col-12 mb-4">
                 <div className="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in">
                   <div className="portfoli-card-img">
                     <div className="img-box v2">
                       <Link
                         className="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                        href={`/fun-project-details/${item.slug}`}
+                        href={item.liveUrl || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <Image
                           className="w-100"
                           alt={item.title}
-                          src={item.imageSrc}
-                          width={item.width}
-                          height={item.height}
+                          src={item.image?.asset ? urlForImage(item.image).url() : item.imageSrc}
+                          width={item.width || 1939}
+                          height={item.height || 1572}
                         />
                       </Link>
                     </div>
@@ -205,7 +218,11 @@ export default function WorksSection() {
                   <div className="portfolio-card-content-wrap fun-project-content">
                     <div className="content-left">
                       <h3 className="portfolio-card-title">
-                        <Link href={`/fun-project-details/${item.slug}`}>
+                        <Link 
+                          href={item.liveUrl || "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {item.title}
                         </Link>
                       </h3>
@@ -214,11 +231,12 @@ export default function WorksSection() {
                     <div className="content-right">
                       <Link
                         className="tmp-btn hover-icon-reverse radius-round btn-border btn-sm"
-                        href={item.liveUrl ? item.liveUrl : `/fun-project-details/${item.slug}`}
-                        {...(item.liveUrl ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        href={item.liveUrl || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <span className="icon-reverse-wrapper">
-                          <span className="btn-text">View details</span>
+                          <span className="btn-text">Visit Site</span>
                           <span className="btn-icon">
                             <i className="fa-sharp fa-regular fa-arrow-right" />
                           </span>
