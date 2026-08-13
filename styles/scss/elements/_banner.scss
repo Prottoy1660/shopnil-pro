@@ -883,16 +883,21 @@
   Banner Five Main Wrapper
   ========================*/
 .banner-five-main-wrapper {
-  padding-top: 174px;
+  padding-top: 140px;
+  padding-bottom: 0;
+
   @media #{variables.$md-layout} {
     padding-top: 100px;
-    padding-bottom: 80px;
+    padding-bottom: 48px;
   }
   @media #{variables.$sm-layout} {
     padding-top: 100px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
   }
+
   .inner {
+    margin-bottom: 1.5rem;
+
     .title {
       color: var(--color-heading);
       text-align: center;
@@ -922,138 +927,212 @@
     }
   }
 
+  // Desktop: 3-column grid. Portrait stretches full row height and pins to bottom.
+  .banner-five-body {
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) minmax(280px, 1.55fr) minmax(200px, 1fr);
+    grid-template-areas: "left portrait right";
+    column-gap: clamp(1rem, 2.5vw, 2.5rem);
+    align-items: stretch;
+    position: relative;
+    min-height: 520px;
+
+    @media (max-width: 991.98px) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 0;
+      gap: 2rem;
+    }
+  }
+
+  .banner-five-side {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    padding-bottom: 40px;
+
+    @media (max-width: 991.98px) {
+      padding-bottom: 0;
+    }
+
+    &--left {
+      grid-area: left;
+      justify-content: center;
+    }
+
+    &--right {
+      grid-area: right;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-bottom: 48px;
+    }
+  }
+
+  .banner-five-stats {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3.5vh, 3.5rem);
+    margin: 0;
+
+    @media (max-width: 991.98px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.25rem 2rem;
+    }
+
+    .banner-counter-card {
+      .title {
+        color: var(--color-heading);
+        font-family: var(--font-primary);
+        font-size: 26px;
+        line-height: 36px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: baseline;
+
+        @media (min-width: 576px) {
+          font-size: 48px;
+          line-height: 48px;
+        }
+      }
+
+      .para {
+        color: var(--color-gray);
+        font-family: var(--font-secondary);
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 23px;
+        margin-bottom: 0;
+
+        @media (min-width: 576px) {
+          font-size: 16px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  .banner-five-portrait {
+    grid-area: portrait;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: stretch;
+    min-height: 420px;
+    margin-bottom: 0;
+
+    @media (max-width: 991.98px) {
+      order: -1;
+      min-height: 320px;
+      max-height: 440px;
+    }
+  }
+
   .bg-benner-img-five {
     position: relative;
     z-index: 1;
     display: flex;
+    align-items: flex-end;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+
     &::before {
       content: " ";
       position: absolute;
-      width: 100%;
-      height: 300px;
+      width: 84%;
+      max-width: 460px;
+      height: 70%;
       bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: -1;
       background: linear-gradient(
         180deg,
         #ff014f 0%,
         rgba(255, 73, 74, 0) 100%
       );
-      border-radius: 291.5px 291.5px 0px 0px;
-
-      @media (min-width: 400px) {
-        height: 482px;
-      }
+      border-radius: 291.5px 291.5px 0 0;
+      pointer-events: none;
     }
 
+    // Keep portrait balanced — slightly larger, still pinned to bottom
+    .banner-five-portrait-img,
     img {
-      width: 76%;
-      margin: auto;
+      width: auto !important;
+      max-width: 80% !important;
+      height: auto !important;
+      max-height: 86% !important;
+      margin: 0 auto !important;
+      display: block !important;
+      object-fit: contain !important;
+      object-position: bottom center !important;
+      position: relative !important;
     }
   }
 
-  .banner-left-content {
-    .banner-counter {
-      ul {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
+  .banner-five-side--right {
+    // Override global .contact-info (centered card styles)
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
 
-        @media (min-width: 992px) {
-          display: inherit;
-        }
+      .title {
+        color: var(--color-heading);
+        text-align: left;
+        font-family: var(--font-primary);
+        font-size: clamp(1.15rem, 1.4vw, 1.45rem);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 14px;
+        text-transform: none;
+        max-width: 100%;
+      }
 
-        li {
-          margin: 0;
+      .para {
+        color: var(--color-gray);
+        text-align: left;
+        font-family: var(--font-secondary);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.75;
+        margin-bottom: 0;
+        max-width: 100%;
+      }
 
-          @media (min-width: 992px) {
-            margin-bottom: 76px;
-          }
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-          .banner-counter-card {
-            .title {
-              color: var(--color-heading);
-              font-family: var(--font-primary);
-              font-size: 26px;
-              line-height: 36px;
-              font-weight: 700;
-              margin-bottom: 4px;
-              display: flex;
-              align-items: baseline;
-
-              @media (min-width: 576px) {
-                font-size: 48px;
-                line-height: 48px;
-              }
-            }
-
-            .para {
-              color: var(--color-gray);
-              font-family: var(--font-secondary);
-              font-weight: 400;
-              font-size: 13px;
-              line-height: 23px;
-
-              @media (min-width: 576px) {
-                font-size: 16px;
-                line-height: 30px;
-              }
-            }
-          }
+      &--primary {
+        .para {
+          opacity: 0.92;
         }
       }
-    }
-  }
 
-  .banner-right-content {
-    .banner-contact-info {
-      .contact-info {
-        margin-bottom: 20px;
-
-        @media (min-width: 1400px) {
-          margin-bottom: 90px;
-        }
-        @media #{variables.$large-mobile} {
-          justify-content: flex-start;
-          align-items: flex-start;
-        }
-        background: transparent;
-        justify-content: flex-end;
-        align-items: flex-end;
-        padding: 0;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
+      &--footer {
+        margin-top: auto;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
 
         .title {
-          color: var(--color-heading);
-          text-align: right;
-          font-family: var(--font-primary);
-          font-size: 24px;
-          font-weight: 700;
-          line-height: 30px;
-          margin-bottom: 13px;
+          font-size: 1.15rem;
+          margin-bottom: 6px;
+          line-height: 1.3;
         }
 
         .para {
-          color: var(--color-gray);
-          text-align: right;
-          font-family: var(--font-secondary);
-          font-size: 15px;
-          font-weight: 400;
-          line-height: 30px;
-          margin-bottom: 8px;
-          @media #{variables.$large-mobile} {
-            text-align: left;
-          }
-          &:last-child {
-            margin-bottom: 0;
-          }
+          font-size: 14px;
+          line-height: 1.5;
+          word-break: break-word;
         }
       }
     }
@@ -1065,6 +1144,8 @@
   overflow: hidden;
   z-index: 1;
   background-color: #0f0f0f;
+  padding-top: 1.5rem;
+
   .banner-shape-img-bg {
     position: absolute;
     bottom: 0;

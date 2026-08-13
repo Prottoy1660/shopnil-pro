@@ -132,6 +132,8 @@ export default defineType({
             // In Sanity, we should use Portable Text (block) for rich text.
             {name: 'image', type: 'image', title: 'Section Image'},
             {name: 'imagePosition', type: 'string', title: 'Image Position', options: {list: ['before', 'after']}},
+            {name: 'videoUrl', type: 'url', title: 'Video URL (YouTube)'},
+            {name: 'videoPosition', type: 'string', title: 'Video Position', options: {list: ['before', 'after']}},
             {name: 'images', type: 'array', title: 'Images Gallery', of: [{type: 'image'}]}
           ]
         }

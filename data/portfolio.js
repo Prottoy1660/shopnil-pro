@@ -303,6 +303,11 @@ export const portfolioItems = [
     sections: [
       {
         title: "",
+        videoUrl: "https://youtu.be/3lqsLzy5PO4",
+        videoPosition: "before"
+      },
+      {
+        title: "",
         image: "/assets/images/latest-portfolio/Newone (2).jpg",
         imagePosition: "before"
       },

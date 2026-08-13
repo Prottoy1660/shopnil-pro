@@ -17,13 +17,13 @@
 /* Overlay positioning for button over image */
 .hero-button-overlay {
   position: absolute;
-  top: 70%; /* Lowered from 60% to 65% */
-  left: 45%;
-  transform: translate(-50%, -50%);
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 10;
   
   @media #{variables.$md-layout} {
-    top: 63%;
+    bottom: 16%;
     left: 50%;
   }
   
@@ -32,14 +32,14 @@
   }
   
   @media #{variables.$large-mobile} {
-    top: 60%;
-    left: 25%;
-    transform: translate(-50%, -50%) scale(0.9);
+    bottom: 14%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
   }
   
   @media #{variables.$small-mobile} {
-    top: 57%;
-    transform: translate(-50%, -50%) scale(0.8);
+    bottom: 12%;
+    transform: translateX(-50%) scale(0.8);
   }
   
   .hero-showreel-container {
