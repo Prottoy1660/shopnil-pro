@@ -1,4 +1,4 @@
-import { client } from "./client";
+import { client, sanityFetchOptions } from "./client";
 import { groq } from "next-sanity";
 
 export async function getProject(slug) {
@@ -13,7 +13,8 @@ export async function getProject(slug) {
         }
       }
     }`,
-    { slug }
+    { slug },
+    sanityFetchOptions
   );
 }
 
@@ -22,7 +23,9 @@ export async function getProjects() {
     groq`*[_type == "project"]|order(allOrder asc){
       ...,
       "slug": slug.current,
-    }`
+    }`,
+    {},
+    sanityFetchOptions
   );
 }
 
@@ -31,60 +34,80 @@ export async function getFeaturedProjects() {
     groq`*[_type == "project" && showInAll == true]|order(allOrder asc)[0...4]{
       ...,
       "slug": slug.current,
-    }`
+    }`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getExperiences() {
   return client.fetch(
-    groq`*[_type == "experience"]|order(order asc)`
+    groq`*[_type == "experience"]|order(order asc)`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getEducation() {
   return client.fetch(
-    groq`*[_type == "education"]|order(order asc)`
+    groq`*[_type == "education"]|order(order asc)`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getSkills() {
   return client.fetch(
-    groq`*[_type == "skillSection"]|order(order asc)`
+    groq`*[_type == "skillSection"]|order(order asc)`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getTestimonials() {
   return client.fetch(
-    groq`*[_type == "testimonial"]|order(order asc)`
+    groq`*[_type == "testimonial"]|order(order asc)`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getCertifications() {
   return client.fetch(
-    groq`*[_type == "certification"]|order(order asc)`
+    groq`*[_type == "certification"]|order(order asc)`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getSettings() {
   return client.fetch(
-    groq`*[_type == "settings"][0]`
+    groq`*[_type == "settings"][0]`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getAbout() {
   return client.fetch(
-    groq`*[_type == "about"][0]`
+    groq`*[_type == "about"][0]`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getHero() {
   return client.fetch(
-    groq`*[_type == "hero"][0]`
+    groq`*[_type == "hero"][0]`,
+    {},
+    sanityFetchOptions
   );
 }
 
 export async function getTrustedBy() {
   return client.fetch(
-    groq`*[_type == "trustedBy"][0]`
+    groq`*[_type == "trustedBy"][0]`,
+    {},
+    sanityFetchOptions
   );
 }

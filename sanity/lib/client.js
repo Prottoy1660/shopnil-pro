@@ -9,3 +9,11 @@ export const client = createClient({
   useCdn,
   perspective: 'published',
 })
+
+/** Shared Next.js cache options so Sanity updates appear on Vercel without redeploy */
+export const sanityFetchOptions = {
+  next: {
+    revalidate: 60,
+    tags: ['sanity'],
+  },
+}

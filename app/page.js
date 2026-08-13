@@ -15,6 +15,9 @@ import TrustedBy from "@/components/common/TrustedBy";
 import React from "react";
 import { getAbout, getCertifications, getExperiences, getHero, getProjects, getSettings, getSkills, getTestimonials, getTrustedBy } from "@/sanity/lib/queries";
 
+// Re-fetch Sanity content on the live site about every 60s (localhost always refreshes in dev)
+export const revalidate = 60;
+
 export async function generateMetadata() {
   const hero = await getHero();
   const about = await getAbout();
