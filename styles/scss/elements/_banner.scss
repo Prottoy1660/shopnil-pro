@@ -933,16 +933,15 @@
     }
   }
 
-  // Desktop: 3-column grid. Portrait stretches full row height and pins to bottom.
+  // Desktop: 3-column — sides stretch with portrait; classic mid/side balance.
   .banner-five-body {
     display: grid;
-    grid-template-columns: minmax(160px, 1fr) minmax(280px, 1.55fr) minmax(200px, 1fr);
+    grid-template-columns: minmax(160px, 1fr) minmax(280px, 1.55fr) minmax(220px, 1.1fr);
     grid-template-areas: "left portrait right";
     column-gap: clamp(1rem, 2.5vw, 2.5rem);
     align-items: stretch;
     position: relative;
     flex: 1 1 auto;
-    // Fill remaining viewport under the title so 100% zoom doesn't leave a black strip
     min-height: max(520px, calc(100svh - 240px));
 
     @media (max-width: 991.98px) {
@@ -959,30 +958,39 @@
     display: flex;
     flex-direction: column;
     z-index: 2;
+    align-self: stretch;
+    height: 100%;
     padding-bottom: 40px;
 
     @media (max-width: 991.98px) {
       padding-bottom: 0;
+      height: auto;
     }
 
     &--left {
       grid-area: left;
       justify-content: center;
+      padding-bottom: 48px;
     }
 
     &--right {
       grid-area: right;
       justify-content: space-between;
       gap: 2rem;
-      padding-bottom: 48px;
+      // Tiny extra nudge down
+      padding-top: clamp(8.25rem, 23.5vh, 15rem);
+      // Lift Toronto / email slightly from the bottom edge
+      padding-bottom: clamp(64px, 8vh, 96px);
     }
   }
 
   .banner-five-stats {
     display: flex;
     flex-direction: column;
-    gap: clamp(1.5rem, 3.5vh, 3.5rem);
+    gap: clamp(1.75rem, 4vh, 3.25rem);
     margin: 0;
+    padding: 0;
+    width: 100%;
 
     @media (max-width: 991.98px) {
       flex-direction: row;
@@ -990,20 +998,55 @@
       gap: 1.25rem 2rem;
     }
 
+    > li {
+      margin: 0;
+      padding: 0;
+    }
+
     .banner-counter-card {
+      width: 100%;
+
       .title {
         color: var(--color-heading);
         font-family: var(--font-primary);
         font-size: 26px;
-        line-height: 36px;
+        line-height: 1.15;
         font-weight: 700;
-        margin-bottom: 4px;
+        margin: 0 0 4px;
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         align-items: baseline;
+        white-space: nowrap;
 
         @media (min-width: 576px) {
           font-size: 48px;
-          line-height: 48px;
+          line-height: 1;
+        }
+      }
+
+      .counter-value {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        white-space: nowrap;
+
+        .odometer,
+        .odometer-inside {
+          display: inline-block !important;
+          vertical-align: baseline;
+          white-space: nowrap !important;
+        }
+
+        .odometer-digit {
+          display: inline-block !important;
+          float: none !important;
+        }
+
+        .counter-suffix {
+          display: inline-block;
+          white-space: nowrap;
         }
       }
 
@@ -1013,7 +1056,7 @@
         font-weight: 400;
         font-size: 13px;
         line-height: 23px;
-        margin-bottom: 0;
+        margin: 0;
 
         @media (min-width: 576px) {
           font-size: 16px;
@@ -1088,15 +1131,15 @@
   .banner-five-side--right {
     // Override global .contact-info (centered card styles)
     .contact-info {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      border-radius: 0;
-      background: transparent;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
 
       .title {
         color: var(--color-heading);
@@ -1128,8 +1171,8 @@
       }
 
       &--footer {
-        margin-top: auto;
-        padding-top: 1.25rem;
+        margin-top: 0 !important;
+        padding-top: 1.25rem !important;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
 
         .title {

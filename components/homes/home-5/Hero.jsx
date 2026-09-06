@@ -64,8 +64,10 @@ export default function Hero({ hero }) {
                       className={`banner-counter-card tmp-scroll-trigger tmp-fade-in animation-order-${item.animationOrder || index + 1}`}
                     >
                       <h4 className="counter title">
-                        <OdometerComponent max={item.count} />
-                        {item.suffix}
+                        <span className="counter-value">
+                          <OdometerComponent max={item.count} />
+                          <span className="counter-suffix">{item.suffix}</span>
+                        </span>
                       </h4>
                       <p className="para">{item.text}</p>
                     </div>
