@@ -1,5 +1,11 @@
 export const resumeItems = [
   {
+    duration: "Dec 2025 - Aug 2026",
+    title: "TD BANK",
+    institute: "SR. UX DESIGNER",
+    logo: "/assets/images/logo/logo5.png",
+  },
+  {
     duration: "2023 - July 2025",
     title: "HEALTH FUTURES",
     institute: "LEAD UI/UX & PRODUCT DESIGNER",

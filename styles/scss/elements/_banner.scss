@@ -885,6 +885,11 @@
 .banner-five-main-wrapper {
   padding-top: 140px;
   padding-bottom: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
 
   @media #{variables.$md-layout} {
     padding-top: 100px;
@@ -897,6 +902,7 @@
 
   .inner {
     margin-bottom: 1.5rem;
+    flex-shrink: 0;
 
     .title {
       color: var(--color-heading);
@@ -935,13 +941,16 @@
     column-gap: clamp(1rem, 2.5vw, 2.5rem);
     align-items: stretch;
     position: relative;
-    min-height: 520px;
+    flex: 1 1 auto;
+    // Fill remaining viewport under the title so 100% zoom doesn't leave a black strip
+    min-height: max(520px, calc(100svh - 240px));
 
     @media (max-width: 991.98px) {
       display: flex;
       flex-direction: column;
       align-items: stretch;
       min-height: 0;
+      flex: 0 1 auto;
       gap: 2rem;
     }
   }
@@ -1067,7 +1076,7 @@
       width: auto !important;
       max-width: 80% !important;
       height: auto !important;
-      max-height: 86% !important;
+      max-height: min(92%, calc(100svh - 220px)) !important;
       margin: 0 auto !important;
       display: block !important;
       object-fit: contain !important;
@@ -1145,6 +1154,21 @@
   z-index: 1;
   background-color: #0f0f0f;
   padding-top: 1.5rem;
+  // Full first viewport at 100% zoom (svh avoids mobile browser chrome jump)
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+
+  > .container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
 
   .banner-shape-img-bg {
     position: absolute;
@@ -1154,6 +1178,17 @@
     width: 100%;
     top: 0;
     right: 0;
+    height: 100%;
+    pointer-events: none;
+
+    img,
+    span,
+    > span img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center bottom !important;
+    }
   }
 }
 
@@ -1220,8 +1255,10 @@
 }
 
 .rpp-banner-five-area .banner-shape-img-bg img {
-  height: 100%;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  object-position: center bottom !important;
 }
 
 /*========================
