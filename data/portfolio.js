@@ -8,6 +8,53 @@ import { slugify } from "@/utils/slugify";
 
 export const portfolioItems = [
   {
+    id: 0,
+    animationOrder: 0,
+    imageSrc: "/assets/images/latest-portfolio/TD/td.png",
+    width: 1939,
+    height: 1572,
+    title: "Account Activity Services Parity",
+    description: "How a 12-step balance check became 2 clicks, and helped unblock a platform migration for TD Business Central.",
+    author: "Shopnil Mahamud",
+    date: "April to August 2026",
+    tags: ["Figma", "UI/UX", "Fintech"],
+    categories: ["UI/UX Design", "Fintech", "Web Application", "Case Study"],
+    showInAll: true,
+    allOrder: 0,
+    details: [
+      {
+        label: "Role: ",
+        value: ["UX Research", "Product Design", "Interaction Design", "User Experience Design"]
+      },
+      {
+        label: "Duration: ",
+        value: "4 months"
+      },
+      {
+        label: "Company: ",
+        value: "TD Bank"
+      }
+    ],
+    summary: "",
+    sections: [
+      { title: "", image: "/assets/images/latest-portfolio/TD/1.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/2.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/3.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/4.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/5.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/6.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/7.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/8.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/9.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/10.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/11.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/12.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/13.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/14.png", imagePosition: "before" },
+      { title: "", image: "/assets/images/latest-portfolio/TD/15.png", imagePosition: "before" },
+    ]
+  },
+  {
     id: 6,
     animationOrder: 6,
     imageSrc: "/assets/images/latest-portfolio/awaj.png",

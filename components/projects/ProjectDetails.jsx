@@ -48,6 +48,13 @@ export default function ProjectDetails({ portfolioItem, projects }) {
     }
   };
 
+  const getImageSrc = (img) => {
+    if (!img) return "";
+    if (typeof img === "string") return img;
+    if (img?.asset) return urlForImage(img).url();
+    return "";
+  };
+
   // Render a section with optional image
   const renderSection = (section) => {
     const { title, content, image, imagePosition, images, videoUrl, videoPosition, titleFontSize, titleFontWeight, contentFontSize, contentLineHeight } = section;
@@ -56,7 +63,7 @@ export default function ProjectDetails({ portfolioItem, projects }) {
       <div className="section-images">
         {imgs.map((img, idx) => (
           <div className="section-image" key={idx}>
-            <img src={urlForImage(img).url()} alt={`${title} illustration ${idx + 1}`} className="img-fluid" />
+            <img src={getImageSrc(img)} alt={`${title} illustration ${idx + 1}`} className="img-fluid" />
           </div>
         ))}
       </div>
@@ -118,7 +125,7 @@ export default function ProjectDetails({ portfolioItem, projects }) {
         {videoPosition === 'before' && videoUrl && renderVideo(videoUrl)}
         {imagePosition === 'before' && (images ? renderImages(images) : image && (
           <div className="section-image">
-            <img src={urlForImage(image).url()} alt={`${title} illustration`} className="img-fluid" />
+            <img src={getImageSrc(image)} alt={`${title || portfolioItem.title} illustration`} className="img-fluid" />
           </div>
         ))}
         
@@ -127,7 +134,7 @@ export default function ProjectDetails({ portfolioItem, projects }) {
         {videoPosition === 'after' && videoUrl && renderVideo(videoUrl)}
         {imagePosition === 'after' && (images ? renderImages(images) : image && (
           <div className="section-image">
-            <img src={urlForImage(image).url()} alt={`${title} illustration`} className="img-fluid" />
+            <img src={getImageSrc(image)} alt={`${title || portfolioItem.title} illustration`} className="img-fluid" />
           </div>
         ))}
       </div>
@@ -142,7 +149,7 @@ export default function ProjectDetails({ portfolioItem, projects }) {
             <div className="project-details-thumnail-wrap" style={{ marginBottom: '30px' }}>
               <Image
                 alt="thumbnail"
-                src={portfolioItem.image ? urlForImage(portfolioItem.image).url() : ""}
+                src={getImageSrc(portfolioItem.image || portfolioItem.imageSrc)}
                 width={1290}
                 height={560}
               />
