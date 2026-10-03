@@ -4,9 +4,19 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { urlForImage } from "@/sanity/lib/image";
 
+function sortByPriority(list = []) {
+  return [...list].sort(
+    (a, b) => Number(a.allOrder ?? 999) - Number(b.allOrder ?? 999)
+  );
+}
+
+function getAllTabProjects(projects = []) {
+  return sortByPriority(projects.filter((p) => p.showInAll)).slice(0, 4);
+}
+
 export default function Portofolio({ isLight = false, projects = [] }) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [filtered, setFiltered] = useState([]);
+  const [filtered, setFiltered] = useState(() => getAllTabProjects(projects));
   const categories = [
     "All",
     "Healthcare",
@@ -15,20 +25,13 @@ export default function Portofolio({ isLight = false, projects = [] }) {
   ];
   
   useEffect(() => {
-    const byPriority = (a, b) => (a.allOrder ?? 999) - (b.allOrder ?? 999);
-
     if (activeCategory == "All") {
-      setFiltered(
-        projects
-          .filter((p) => p.showInAll) // Only show items marked for "Show in All"
-          .sort(byPriority)
-          .slice(0, 4) // Limit to 4 items
-      );
+      setFiltered(getAllTabProjects(projects));
     } else {
       setFiltered(
-        projects
-          .filter((elm) => elm.categories?.includes(activeCategory))
-          .sort(byPriority)
+        sortByPriority(
+          projects.filter((elm) => elm.categories?.includes(activeCategory))
+        )
       );
     }
   }, [activeCategory, projects]);

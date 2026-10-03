@@ -20,7 +20,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Fintech"],
     categories: ["UI/UX Design", "Fintech", "Web Application", "Case Study"],
     showInAll: true,
-    allOrder: 0,
+    allOrder: 1,
     details: [
       {
         label: "Role: ",
@@ -330,7 +330,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Healthcare"],
     categories: ["UI/UX Design", "Healthcare", "Web Application"],
     showInAll: true,
-    allOrder: 2,
+    allOrder: 3,
     details: [
       {
         label: "Role: ",
@@ -1234,7 +1234,7 @@ export const portfolioItems = [
     tags: ["Figma", "UI/UX", "Fintech"],
     categories: ["UI/UX Design", "Fintech", "Web Application"],
     showInAll: true,
-    allOrder: 1,
+    allOrder: 2,
     details: [
       {
         label: "Role: ",

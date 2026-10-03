@@ -5,7 +5,8 @@ import { caseStudies as staticCaseStudies, websiteProjects as staticWebsiteProje
 import { urlForImage } from "@/sanity/lib/image";
 
 export default function WorksSection({ projects }) {
-  const byPriority = (a, b) => (a.allOrder ?? a.id ?? 999) - (b.allOrder ?? b.id ?? 999);
+  const byPriority = (a, b) =>
+    Number(a.allOrder ?? a.id ?? 999) - Number(b.allOrder ?? b.id ?? 999);
 
   // Filter projects by category if Sanity data is available
   const sanityCaseStudies = projects

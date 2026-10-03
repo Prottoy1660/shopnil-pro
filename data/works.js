@@ -3,7 +3,8 @@ import { slugify } from "@/utils/slugify";
 // Case Studies - Using existing portfolio items that have detailed case studies
 export const caseStudies = [
   {
-    id: 0,
+    id: 1,
+    allOrder: 1,
     imageSrc: "/assets/images/latest-portfolio/TD/td.png",
     width: 1939,
     height: 1572,
@@ -13,7 +14,8 @@ export const caseStudies = [
     slug: "account-activity-services-parity"
   },
   {
-    id: 1,
+    id: 2,
+    allOrder: 2,
     imageSrc: "/assets/images/latest-portfolio/Expense insight.png",
     width: 1939,
     height: 1572,
@@ -23,7 +25,8 @@ export const caseStudies = [
     slug: "expense-insight"
   },  
   {
-    id: 2,
+    id: 3,
+    allOrder: 3,
     imageSrc: "/assets/images/latest-portfolio/dynacare.png",
     width: 1939,
     height: 1572,
@@ -33,7 +36,8 @@ export const caseStudies = [
     slug: "dynacare-lis"
   },
   {
-    id: 3,
+    id: 4,
+    allOrder: 4,
     imageSrc: "/assets/images/latest-portfolio/ax_cp.png",
     width: 1939,
     height: 1572,
@@ -43,7 +47,8 @@ export const caseStudies = [
     slug: "augmedix-inc"
   },
   {
-    id: 4,
+    id: 5,
+    allOrder: 5,
     imageSrc: "/assets/images/latest-portfolio/BMO AI.jpg",
     width: 1939,
     height: 1572,
@@ -52,8 +57,9 @@ export const caseStudies = [
     tags: ["Figma", "UI/UX", "Fintech"],
     slug: "al-powered-fraud-detection-tool-bmo"
   },
-    {
-    id: 5,
+  {
+    id: 6,
+    allOrder: 6,
     imageSrc: "/assets/images/latest-portfolio/finicky_cover.png",
     width: 1939,
     height: 1572,
@@ -63,7 +69,8 @@ export const caseStudies = [
     slug: "finicky-foodie"
   },
   {
-    id: 6,
+    id: 7,
+    allOrder: 7,
     imageSrc: "/assets/images/latest-portfolio/awaj.png",
     width: 1920,
     height: 1572,
