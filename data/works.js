@@ -7,7 +7,7 @@ export const caseStudies = [
     imageSrc: "/assets/images/latest-portfolio/TD/td.png",
     width: 1939,
     height: 1572,
-    title: "Account Activity Services Parity",
+    title: "TD Account Activity Services Parity Project",
     description: "How a 12-step balance check became 2 clicks, and helped unblock a platform migration for TD Business Central.",
     tags: ["Figma", "UI/UX", "Fintech"],
     slug: "account-activity-services-parity"
