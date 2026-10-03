@@ -15,16 +15,20 @@ export default function Portofolio({ isLight = false, projects = [] }) {
   ];
   
   useEffect(() => {
+    const byPriority = (a, b) => (a.allOrder ?? 999) - (b.allOrder ?? 999);
+
     if (activeCategory == "All") {
       setFiltered(
         projects
           .filter((p) => p.showInAll) // Only show items marked for "Show in All"
-          .sort((a, b) => (a.allOrder || 999) - (b.allOrder || 999))
+          .sort(byPriority)
           .slice(0, 4) // Limit to 4 items
       );
     } else {
       setFiltered(
-        projects.filter((elm) => elm.categories?.includes(activeCategory))
+        projects
+          .filter((elm) => elm.categories?.includes(activeCategory))
+          .sort(byPriority)
       );
     }
   }, [activeCategory, projects]);

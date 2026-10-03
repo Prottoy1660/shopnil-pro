@@ -13,7 +13,7 @@ export const portfolioItems = [
     imageSrc: "/assets/images/latest-portfolio/TD/td.png",
     width: 1939,
     height: 1572,
-    title: "TD Account Activity Services Parity Project",
+    title: "TD Account Activity Parity",
     description: "How a 12-step balance check became 2 clicks, and helped unblock a platform migration for TD Business Central.",
     author: "Shopnil Mahamud",
     date: "April to August 2026",

@@ -5,10 +5,18 @@ import { caseStudies as staticCaseStudies, websiteProjects as staticWebsiteProje
 import { urlForImage } from "@/sanity/lib/image";
 
 export default function WorksSection({ projects }) {
+  const byPriority = (a, b) => (a.allOrder ?? a.id ?? 999) - (b.allOrder ?? b.id ?? 999);
+
   // Filter projects by category if Sanity data is available
-  const sanityCaseStudies = projects?.filter(p => p.categories?.includes("Case Study"));
-  const sanityWebsiteProjects = projects?.filter(p => p.categories?.includes("Website Project"));
-  const sanityFunProjects = projects?.filter(p => p.categories?.includes("Fun Project"));
+  const sanityCaseStudies = projects
+    ?.filter((p) => p.categories?.includes("Case Study"))
+    .sort(byPriority);
+  const sanityWebsiteProjects = projects
+    ?.filter((p) => p.categories?.includes("Website Project"))
+    .sort(byPriority);
+  const sanityFunProjects = projects
+    ?.filter((p) => p.categories?.includes("Fun Project"))
+    .sort(byPriority);
 
   // Use Sanity data if available, otherwise fallback to static data
   const caseStudies = sanityCaseStudies?.length > 0 ? sanityCaseStudies : staticCaseStudies;
