@@ -136,7 +136,7 @@ export default function MobileMenu() {
               <a href="https://x.com/shopniljourney" target="_blank" rel="noopener noreferrer">
                 <XIcon className="social-icon" />
               </a>
-              <a href="https://www.facebook.com/designarium.net" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/shopnil.journey" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-facebook" />
               </a>
             </div>

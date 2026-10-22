@@ -382,7 +382,7 @@ export default function Sidebar() {
                   <div className="social-icon-glow sidebar-glow" />
                   <i className="fa-brands fa-linkedin-in sidebar-icon" />
                 </a>
-                <a href="https://www.facebook.com/designarium.net" target="_blank" rel="noopener noreferrer" className="social-icon sidebar-social-link">
+                <a href="https://www.facebook.com/shopnil.journey" target="_blank" rel="noopener noreferrer" className="social-icon sidebar-social-link">
                   <div className="social-icon-glow sidebar-glow" />
                   <i className="fa-brands fa-facebook sidebar-icon" />
                 </a>
